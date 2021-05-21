@@ -11,6 +11,7 @@ import { FaSpinner } from 'react-icons/fa';
 export default function Home() {
   const [comics, setComics] = useState<Comic[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
 
   useEffect(() => {
     async function fetchComics() {
@@ -56,7 +57,6 @@ export default function Home() {
           <S.ComicsWrapper>
             {comics.map(comic => (
               <S.ComicBlock key={comic.id} thumbnail={comic.thumbnailUrl}>
-                {/* <img src={comic.thumbnailUrl} alt={comic.title} /> */}
                 <h4>{comic.title}</h4>
 
                 <div className='links-wrapper'>
@@ -66,6 +66,13 @@ export default function Home() {
               </S.ComicBlock>
             ))}
           </S.ComicsWrapper>
+
+          <S.LoadMoreButton
+            isLoadingMore={isLoadingMore}
+            onClick={() => setIsLoadingMore(!isLoadingMore)}
+          >
+            {isLoadingMore ? 'Carregando...' : 'Carregar mais'}
+          </S.LoadMoreButton>
         </S.HomeContainer>
       </S.PageContainer>
     </>

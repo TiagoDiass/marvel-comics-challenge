@@ -170,3 +170,28 @@ export const ComicBlock = styled.article<{ thumbnail: string }>`
     }
   }
 `;
+
+export const LoadMoreButton = styled.button<{ isLoadingMore: boolean }>`
+  ${({ theme, isLoadingMore }) => css`
+    margin: 1rem 0;
+    align-self: center;
+    width: min(20rem, 100%);
+    padding: 0.6rem 1rem;
+
+    background-color: ${isLoadingMore ? theme.colors.primary : 'transparent'};
+    color: ${isLoadingMore ? theme.colors.white : theme.colors.primary};
+    border: 1px solid ${theme.colors.primary};
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    font-family: ${theme.fonts.default};
+    font-weight: 500;
+
+    transition: all 0.2s ease;
+
+    &:hover {
+      cursor: ${isLoadingMore ? 'wait' : 'pointer'};
+      color: ${theme.colors.white};
+      background-color: ${theme.colors.primary};
+    }
+  `}
+`;
