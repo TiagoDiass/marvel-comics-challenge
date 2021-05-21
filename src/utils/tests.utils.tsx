@@ -43,14 +43,26 @@ export const mockApiComic = (): APIComic => ({
   },
 });
 
+type MockApiComicsResponseParams = {
+  currentOffset?: number;
+  totalOffsets?: number;
+  totalResults?: number;
+};
+
 /**
  * @helper factory que retorna um mock de uma resposta da API com os comics
  */
-export const mockApiComicsResponse = () => ({
+export const mockApiComicsResponse = ({
+  currentOffset = 0,
+  totalOffsets = 10,
+  totalResults = 3,
+}: MockApiComicsResponseParams) => ({
   status: 200,
   data: {
     data: {
-      results: [mockApiComic(), mockApiComic(), mockApiComic()],
+      offset: currentOffset,
+      total: totalOffsets,
+      results: new Array(totalResults).fill(undefined).map(() => mockApiComic()), // criando um array do tamanho pedido
     },
   },
 });
