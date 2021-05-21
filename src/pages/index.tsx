@@ -65,7 +65,7 @@ export default function Home() {
           <S.SearchBar
             data-testid='search-bar'
             isLoading={isLoadingSearch}
-            data-loading={isLoadingSearch}
+            data-is-loading={isLoadingSearch}
           >
             <input
               type='text'
@@ -86,7 +86,7 @@ export default function Home() {
 
                 <div className='links-wrapper'>
                   <a
-                    className='add-or-remove-to-list'
+                    className='remove-or-add-to-list'
                     onClick={() =>
                       isComicAlreadyInList(comic)
                         ? handleRemoveComicOfList(comic)
