@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const PageContainer = styled.div`
   display: flex;
@@ -21,6 +21,92 @@ export const HomeContainer = styled.main`
   @media (max-width: 768px) {
     padding: 1rem 2rem;
   }
+`;
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const HomeHeading = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    height: 80px;
+    row-gap: 0.5rem;
+    border: 1px solid red;
+  }
+`;
+
+export const SearchBar = styled.div<{ isLoading: boolean }>`
+  ${({ theme, isLoading }) => css`
+    width: min(500px, 100%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    input {
+      border: none;
+      outline: none;
+      height: 100%;
+      font-size: 0.9rem;
+      width: 85%;
+      padding: 0 0.5rem;
+      border-radius: 0.3rem 0 0 0.3rem;
+      border: 1px solid ${theme.colors.secondary};
+      border-right: 0;
+
+      transition: all 0.15s ease;
+
+      &:focus {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    button {
+      background-color: ${theme.colors.secondary};
+      border: none;
+      outline: none;
+      height: 100%;
+      width: 15%;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 0.3rem 0.3rem 0;
+
+      svg {
+        color: ${theme.colors.white};
+        transition: all 0.2s ease;
+        animation: ${isLoading
+          ? css`
+              ${rotate} 1.3s linear infinite
+            `
+          : 'none'};
+      }
+
+      &:hover {
+        filter: brightness(0.95);
+        cursor: ${isLoading ? 'initial' : 'pointer'};
+
+        ${!isLoading &&
+        css`
+          svg {
+            transform: scaleX(-1);
+          }
+        `}
+      }
+    }
+  `}
 `;
 
 export const ComicsWrapper = styled.section`

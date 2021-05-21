@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { APIComic, Comic } from '@types';
 import api from 'services/api';
-import mock from '../../mock.json';
 import Header from 'components/Header/Header';
 import * as S from 'styles/pages/home.styles';
+import mock from '../../mock.json';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { FaSpinner } from 'react-icons/fa';
 
 export default function Home() {
   const [comics, setComics] = useState<Comic[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function fetchComics() {
@@ -37,7 +40,18 @@ export default function Home() {
         <Header />
 
         <S.HomeContainer>
-          <h1>Quadrinhos</h1>
+          <S.HomeHeading>
+            <h1>Quadrinhos</h1>
+
+            <S.SearchBar isLoading={isLoading}>
+              <input
+                type='text'
+                aria-details='Barra de busca'
+                placeholder='Digite um quadrinho para buscar...'
+              />
+              <button>{isLoading ? <FaSpinner /> : <AiOutlineSearch />}</button>
+            </S.SearchBar>
+          </S.HomeHeading>
 
           <S.ComicsWrapper>
             {comics.map(comic => (
