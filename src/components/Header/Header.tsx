@@ -17,11 +17,15 @@ export default function Header() {
       <S.ComicsAmount title='Clique aqui para ver a sua lista de quadrinhos'>
         <div>
           <strong>Meus quadrinhos</strong>
+
           {totalComics ? (
-            <span>{totalComics === 1 ? `1 quadrinho` : `${totalComics} quadrinhos`}</span>
+            <span data-testid='amount-label'>
+              {totalComics === 1 ? `1 quadrinho` : `${totalComics} quadrinhos`}
+            </span>
           ) : (
-            <span>Nenhum quadrinho adicionado</span>
+            <span data-testid='amount-label'>Nenhum quadrinho adicionado</span>
           )}
+          
         </div>
         <AiOutlineUnorderedList size={32} color='#fff' />
 
