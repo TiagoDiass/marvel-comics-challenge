@@ -8,7 +8,8 @@ import {
 } from 'utils/tests.utils';
 import api from 'services/api';
 
-jest.spyOn(api, 'get').mockResolvedValue(mockApiComicsResponse());
+const mockAPIResponse = mockApiComicsResponse();
+jest.spyOn(api, 'get').mockResolvedValue(mockAPIResponse);
 
 /**
  * @factory fabrica o S.U.T (system under test), que neste caso, é o componente/página Home
@@ -43,5 +44,26 @@ describe('Home page', () => {
     const searchBarInput = screen.getByRole('textbox'); // obtendo o input da search bar
     expect(searchBar).toHaveAttribute('data-loading', 'false');
     expect(searchBarInput).toHaveValue('');
+  });
+
+  it('should render comics correctly', async () => {
+    makeSut(mockComicsListContextValue());
+    const mockAPIResults = mockAPIResponse.data.data.results;
+
+    await waitFor(() => screen.getByRole('heading'));
+
+    const comicsSection = screen.getByTestId('comics-wrapper');
+    expect(comicsSection.children).toHaveLength(mockAPIResults.length);
+
+    const comics = screen.getAllByRole('article');
+
+    comics.forEach((comic, index) => {
+      expect(comic.querySelector('h4')).toBeInTheDocument();
+      expect(comic.querySelector('h4')).toHaveTextContent(mockAPIResults[index].title);
+      expect(comic.querySelector('a.add-or-remove-to-list')).toHaveTextContent(
+        /adicionar à lista/i
+      );
+      expect(comic.querySelector('a.details')).toHaveTextContent(/detalhes/i);
+    });
   });
 });

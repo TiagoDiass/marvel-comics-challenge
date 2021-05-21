@@ -76,7 +76,7 @@ export default function Home() {
           </S.SearchBar>
         </S.HomeHeading>
 
-        <S.ComicsWrapper>
+        <S.ComicsWrapper data-testid='comics-wrapper'>
           {isLoading ? (
             <h2>Carregando...</h2>
           ) : (
@@ -86,7 +86,7 @@ export default function Home() {
 
                 <div className='links-wrapper'>
                   <a
-                    className='add-to-list-a'
+                    className='add-or-remove-to-list'
                     onClick={() =>
                       isComicAlreadyInList(comic)
                         ? handleRemoveComicOfList(comic)
@@ -95,7 +95,7 @@ export default function Home() {
                   >
                     {isComicAlreadyInList(comic) ? 'Remover da lista' : 'Adicionar à lista'}
                   </a>
-                  <a className='details-a'>Detalhes</a>
+                  <a className='details'>Detalhes</a>
                 </div>
               </S.ComicBlock>
             ))
