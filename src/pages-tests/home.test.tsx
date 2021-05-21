@@ -103,7 +103,7 @@ describe('Home page', () => {
 
     userEvent.click(removeFromListButton); // clicando no botão de adicionar à lista
 
-    // verificando se o addComic() foi chamado com os params esperados
+    // verificando se o removeComic() foi chamado com os params esperados
     expect(mockComicsContext.removeComic).toHaveBeenCalledWith(
       expect.objectContaining({ id: firstComicFromAPI.id })
     );
