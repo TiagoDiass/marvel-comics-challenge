@@ -2,13 +2,16 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { APIComic, Comic } from '@types';
 import api from 'services/api';
-import Header from 'components/Header/Header';
-import * as S from 'styles/pages/home.styles';
+import { Toast } from 'plugins/sweetAlert';
 import mock from '../../mock.json';
+import { useComicsListContext } from 'contexts/ComicsList.context';
+import Header from 'components/Header/Header';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaSpinner } from 'react-icons/fa';
+import * as S from 'styles/pages/home.styles';
 
 export default function Home() {
+  const { addComic, removeComic, isComicAlreadyInList } = useComicsListContext();
   const [comics, setComics] = useState<Comic[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
@@ -30,6 +33,22 @@ export default function Home() {
 
     fetchComics();
   }, []);
+
+  const handleAddComicToList = (comic: Comic) => {
+    addComic(comic);
+    Toast.fire({
+      icon: 'success',
+      title: 'Adicionado com sucesso',
+    });
+  };
+
+  const handleRemoveComicOfList = (comic: Comic) => {
+    removeComic(comic);
+    Toast.fire({
+      icon: 'success',
+      title: 'Removido com sucesso',
+    });
+  };
 
   return (
     <>
@@ -60,7 +79,16 @@ export default function Home() {
                 <h4>{comic.title}</h4>
 
                 <div className='links-wrapper'>
-                  <a className='add-to-list-a'>Adicionar à lista</a>
+                  <a
+                    className='add-to-list-a'
+                    onClick={() =>
+                      isComicAlreadyInList(comic)
+                        ? handleRemoveComicOfList(comic)
+                        : handleAddComicToList(comic)
+                    }
+                  >
+                    {isComicAlreadyInList(comic) ? 'Remover da lista' : 'Adicionar à lista'}
+                  </a>
                   <a className='details-a'>Detalhes</a>
                 </div>
               </S.ComicBlock>
