@@ -12,14 +12,15 @@ import * as S from 'styles/pages/home.styles';
 export default function Home() {
   const { addComic, removeComic, isComicAlreadyInList } = useComicsListContext();
   const [comics, setComics] = useState<Comic[]>([]);
-  const [isLoadingSearch, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingSearch, setIsLoadingSearch] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
   useEffect(() => {
     async function fetchComics() {
       // buscando dados da API, tipando o retorno deles para depois transformá-los para o formato que o componente espera
       const response = await api.get('/v1/public/comics', { params: { limit: 12 } });
-      const unformattedComics: APIComic[] = mock.results;
+      const unformattedComics: APIComic[] = response.data.data.results;
 
       const formatedComics: Comic[] = unformattedComics.map(comic => ({
         id: comic.id,
@@ -76,25 +77,29 @@ export default function Home() {
         </S.HomeHeading>
 
         <S.ComicsWrapper>
-          {comics.map(comic => (
-            <S.ComicBlock key={comic.id} thumbnail={comic.thumbnailUrl}>
-              <h4>{comic.title}</h4>
+          {isLoading ? (
+            <h2>Carregando...</h2>
+          ) : (
+            comics.map(comic => (
+              <S.ComicBlock key={comic.id} thumbnail={comic.thumbnailUrl}>
+                <h4>{comic.title}</h4>
 
-              <div className='links-wrapper'>
-                <a
-                  className='add-to-list-a'
-                  onClick={() =>
-                    isComicAlreadyInList(comic)
-                      ? handleRemoveComicOfList(comic)
-                      : handleAddComicToList(comic)
-                  }
-                >
-                  {isComicAlreadyInList(comic) ? 'Remover da lista' : 'Adicionar à lista'}
-                </a>
-                <a className='details-a'>Detalhes</a>
-              </div>
-            </S.ComicBlock>
-          ))}
+                <div className='links-wrapper'>
+                  <a
+                    className='add-to-list-a'
+                    onClick={() =>
+                      isComicAlreadyInList(comic)
+                        ? handleRemoveComicOfList(comic)
+                        : handleAddComicToList(comic)
+                    }
+                  >
+                    {isComicAlreadyInList(comic) ? 'Remover da lista' : 'Adicionar à lista'}
+                  </a>
+                  <a className='details-a'>Detalhes</a>
+                </div>
+              </S.ComicBlock>
+            ))
+          )}
         </S.ComicsWrapper>
 
         <S.LoadMoreButton

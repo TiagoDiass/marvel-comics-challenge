@@ -1,7 +1,9 @@
+import faker from 'faker';
 import { ThemeProvider } from 'styled-components';
+import theme from 'styles/theme';
 import { render, RenderResult } from '@testing-library/react';
 import { IComicsListContext } from 'contexts/ComicsList.context';
-import theme from 'styles/theme';
+import { APIComic } from '@types';
 
 /**
  * @helper renderiza o componente com o tema utilizado pelo ThemeProvider do styled-components
@@ -18,4 +20,37 @@ export const mockComicsListContextValue = (): IComicsListContext => ({
   getTotalComics: jest.fn(),
   isComicAlreadyInList: jest.fn(),
   comicsList: [],
+});
+
+/**
+ * @helper factory que retorna um mock de um comic da API
+ */
+export const mockApiComic = (): APIComic => ({
+  id: faker.datatype.number(5000),
+  title: faker.random.words(5),
+  creators: {
+    items: [
+      {
+        name: faker.name.findName(),
+        role: faker.random.words(2),
+      },
+    ],
+  },
+  pageCount: faker.datatype.number(),
+  thumbnail: {
+    path: faker.image.imageUrl(),
+    extension: 'jpg',
+  },
+});
+
+/**
+ * @helper factory que retorna um mock de uma resposta da API com os comics
+ */
+export const mockApiComicsResponse = () => ({
+  status: 200,
+  data: {
+    data: {
+      results: [mockApiComic(), mockApiComic(), mockApiComic()],
+    },
+  },
 });
