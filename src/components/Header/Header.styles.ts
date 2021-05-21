@@ -56,6 +56,7 @@ export const ComicsAmount = styled.div`
   margin-left: auto;
   display: flex;
   align-items: center;
+  position: relative;
   transition: opacity 0.15s ease-in-out;
 
   &:hover {
@@ -80,5 +81,30 @@ export const ComicsAmount = styled.div`
       font-size: 12px;
       color: ${({ theme }) => theme.colors.whiteDarker};
     }
+  }
+
+  > span:last-child {
+    background: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.white};
+    font-size: 11px;
+    line-height: 20px;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    right: -10px;
+    top: -6px;
+    display: none;
+
+    @media (max-width: 430px) {
+      display: initial;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+    margin-top: 1rem;
+    /* border: 1px solid white; */
   }
 `;

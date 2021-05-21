@@ -4,7 +4,7 @@ import { useComicsListContext } from 'contexts/ComicsList.context';
 
 export default function Header() {
   const { getTotalComics } = useComicsListContext();
-  const total = getTotalComics();
+  const totalComics = getTotalComics();
 
   return (
     <S.HeaderContainer>
@@ -17,13 +17,15 @@ export default function Header() {
       <S.ComicsAmount title='Clique aqui para ver a sua lista de quadrinhos'>
         <div>
           <strong>Meus quadrinhos</strong>
-          {total ? (
-            <span>{total === 1 ? `1 quadrinho` : `${total} quadrinhos`}</span>
+          {totalComics ? (
+            <span>{totalComics === 1 ? `1 quadrinho` : `${totalComics} quadrinhos`}</span>
           ) : (
             <span>Nenhum quadrinho adicionado</span>
           )}
         </div>
         <AiOutlineUnorderedList size={32} color='#fff' />
+
+        <span>{totalComics}</span>
       </S.ComicsAmount>
     </S.HeaderContainer>
   );
