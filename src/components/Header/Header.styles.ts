@@ -51,3 +51,34 @@ export const Slogan = styled.p`
     }
   `};
 `;
+
+export const ComicsAmount = styled.div`
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.15s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.85;
+  }
+
+  & div {
+    text-align: right;
+    margin-right: 10px;
+
+    @media (max-width: 430px) {
+      display: none;
+    }
+
+    & strong {
+      display: block;
+      color: ${({ theme }) => theme.colors.white};
+    }
+
+    & span {
+      font-size: 12px;
+      color: ${({ theme }) => theme.colors.whiteDarker};
+    }
+  }
+`;

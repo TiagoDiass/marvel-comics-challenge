@@ -6,6 +6,7 @@ export type IComicsListContext = {
   addComic: (comic: Comic) => void;
   removeComic: (comic: Comic) => void;
   isComicAlreadyInList: (comic: Comic) => boolean;
+  getTotalComics: () => number;
 };
 
 export const ComicsListContext = createContext({} as IComicsListContext);
@@ -17,9 +18,6 @@ type ComicsListContextProviderProps = {
 export function ComicsListContextProvider({ children }: ComicsListContextProviderProps) {
   const [comicsList, setComicsList] = useState<Comic[]>([]);
 
-  /**
-   * @stateHandler adiciona um comic novo na lista de comics
-   */
   const addComic = (newComic: Comic) => {
     const comicExists = isComicAlreadyInList(newComic);
 
@@ -28,9 +26,6 @@ export function ComicsListContextProvider({ children }: ComicsListContextProvide
     }
   };
 
-  /**
-   * @stateHandler remove um comic da lista de comics
-   */
   const removeComic = (comicToBeRemoved: Comic) => {
     // filtrando a nova lista, removendo o comic que o usuário escolheu remover
     const newComicsList = comicsList.filter(comic => comic.id !== comicToBeRemoved.id);
@@ -44,8 +39,12 @@ export function ComicsListContextProvider({ children }: ComicsListContextProvide
     return !!comicExists;
   };
 
+  const getTotalComics = () => comicsList.length;
+
   return (
-    <ComicsListContext.Provider value={{ comicsList, addComic, removeComic, isComicAlreadyInList }}>
+    <ComicsListContext.Provider
+      value={{ comicsList, addComic, removeComic, isComicAlreadyInList, getTotalComics }}
+    >
       {children}
     </ComicsListContext.Provider>
   );
