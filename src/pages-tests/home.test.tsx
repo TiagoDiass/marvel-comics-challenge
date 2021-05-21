@@ -10,7 +10,7 @@ import {
 import api from 'services/api';
 import { Toast } from 'plugins/sweetAlert';
 
-const mockAPIResponse = mockApiComicsResponse();
+const mockAPIResponse = mockApiComicsResponse({});
 jest.spyOn(api, 'get').mockResolvedValue(mockAPIResponse);
 jest.spyOn(Toast, 'fire');
 
@@ -113,5 +113,37 @@ describe('Home page', () => {
       icon: 'success',
       title: 'Removido com sucesso',
     });
+  });
+
+  it('should pass', async () => {
+    // mockando api.get para retornar 12 resultados, e após isso retornar 0 na próxima request, o que fará que o botão de carregar mais será oculto após fazer a segunda request
+    jest
+      .spyOn(api, 'get')
+      .mockResolvedValueOnce(
+        mockApiComicsResponse({ currentOffset: 0, totalOffsets: 1, totalResults: 12 })
+      )
+      .mockResolvedValueOnce(
+        mockApiComicsResponse({ currentOffset: 1, totalOffsets: 1, totalResults: 0 })
+      );
+
+    await makeSut(mockComicsListContextValue());
+
+    // obtendo o elemento do botão
+    const loadMoreButton = screen.getByText(/carregar mais/i);
+
+    expect(loadMoreButton).toBeInTheDocument();
+
+    userEvent.click(loadMoreButton); // clicando no botão de carregar mais
+
+    await waitFor(() => screen.getByRole('heading', { name: /quadrinhos/i }));
+
+    expect(api.get).toHaveBeenCalledWith('/v1/public/comics', {
+      params: {
+        limit: 12,
+        offset: 1,
+      },
+    });
+
+    expect(loadMoreButton).not.toBeInTheDocument(); // o botão deve ter saído da DOM pois a segunda requisição não retornou nenhum quadrinho
   });
 });

@@ -12,6 +12,8 @@ import * as S from 'styles/pages/home.styles';
 export default function Home() {
   const { addComic, removeComic, isComicAlreadyInList } = useComicsListContext();
   const [comics, setComics] = useState<Comic[]>([]);
+  const [loadedAll, setLoadedAll] = useState(false); // estado que vai definir se já foi carregado todos os comics com o filtro escolhido
+  const [currentPage, setCurrentPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingSearch, setIsLoadingSearch] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
@@ -19,10 +21,12 @@ export default function Home() {
   useEffect(() => {
     async function fetchComics() {
       // buscando dados da API, tipando o retorno deles para depois transformá-los para o formato que o componente espera
+      setIsLoading(true);
       const response = await api.get('/v1/public/comics', { params: { limit: 12 } });
+
       const unformattedComics: APIComic[] = response.data.data.results;
 
-      const formatedComics: Comic[] = unformattedComics.map(comic => ({
+      const formattedComics: Comic[] = unformattedComics.map(comic => ({
         id: comic.id,
         title: comic.title,
         thumbnailUrl: `${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`,
@@ -30,7 +34,8 @@ export default function Home() {
         creators: comic.creators.items.map(creator => creator.name),
       }));
 
-      setComics(formatedComics);
+      setIsLoading(false);
+      setComics(formattedComics);
     }
 
     fetchComics();
@@ -44,12 +49,43 @@ export default function Home() {
     });
   };
 
-  const handleRemoveComicOfList = (comic: Comic) => {
+  const handleRemoveComicFromList = (comic: Comic) => {
     removeComic(comic);
     Toast.fire({
       icon: 'success',
       title: 'Removido com sucesso',
     });
+  };
+
+  const handleLoadMore = async () => {
+    setIsLoadingMore(true);
+    const response = await api.get('/v1/public/comics', {
+      params: {
+        limit: 12,
+        offset: currentPage + 1,
+      },
+    });
+
+    setCurrentPage(currentPage => currentPage + 1);
+
+    // para setar o loadedAll, precisamos ver se tudo com o determinado filtro já foi carregado, basta verificar se a API retornou um array com tamanho maior que 0
+    if (response.data.data.results.length > 0) {
+      const unformattedComics: APIComic[] = response.data.data.results;
+
+      const newComics: Comic[] = unformattedComics.map(comic => ({
+        id: comic.id,
+        title: comic.title,
+        thumbnailUrl: `${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`,
+        totalPageCount: comic.pageCount,
+        creators: comic.creators.items.map(creator => creator.name),
+      }));
+
+      setComics([...comics, ...newComics]);
+    } else {
+      setLoadedAll(true);
+    }
+
+    setIsLoadingMore(false);
   };
 
   return (
@@ -89,7 +125,7 @@ export default function Home() {
                     className='remove-or-add-to-list'
                     onClick={() =>
                       isComicAlreadyInList(comic)
-                        ? handleRemoveComicOfList(comic)
+                        ? handleRemoveComicFromList(comic)
                         : handleAddComicToList(comic)
                     }
                   >
@@ -102,12 +138,12 @@ export default function Home() {
           )}
         </S.ComicsWrapper>
 
-        <S.LoadMoreButton
-          isLoadingMore={isLoadingMore}
-          onClick={() => setIsLoadingMore(!isLoadingMore)}
-        >
-          {isLoadingMore ? 'Carregando...' : 'Carregar mais'}
-        </S.LoadMoreButton>
+        {/* O botão só será exibido se ainda não tiver carregado tudo */}
+        {!loadedAll && !isLoading && (
+          <S.LoadMoreButton isLoadingMore={isLoadingMore} onClick={handleLoadMore}>
+            {isLoadingMore ? 'Carregando...' : 'Carregar mais'}
+          </S.LoadMoreButton>
+        )}
       </S.HomeContainer>
     </>
   );
