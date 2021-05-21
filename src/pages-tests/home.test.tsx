@@ -4,7 +4,7 @@ import { ComicsListContext, IComicsListContext } from 'contexts/ComicsList.conte
 import { renderWithTheme, mockComicsListContextValue } from 'utils/tests.utils';
 import api from 'services/api';
 
-jest.spyOn(api, 'get');
+jest.spyOn(api, 'get').mockResolvedValue({});
 
 /**
  * @factory fabrica o S.U.T (system under test), que neste caso, é o componente/página Home
@@ -28,5 +28,14 @@ describe('Home page', () => {
         limit: 12,
       },
     });
+  });
+
+  it('should start with search bar empty and not loading', () => {
+    makeSut(mockComicsListContextValue());
+
+    const searchBar = screen.getByTestId('search-bar'); // obtendo o elemento da search bar inteira
+    const searchBarInput = screen.getByRole('textbox'); // obtendo o input da search bar
+    expect(searchBar).toHaveAttribute('data-loading', 'false');
+    expect(searchBarInput).toHaveValue('');
   });
 });

@@ -12,7 +12,7 @@ import * as S from 'styles/pages/home.styles';
 export default function Home() {
   const { addComic, removeComic, isComicAlreadyInList } = useComicsListContext();
   const [comics, setComics] = useState<Comic[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingSearch, setIsLoading] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
   useEffect(() => {
@@ -61,13 +61,17 @@ export default function Home() {
         <S.HomeHeading>
           <h1>Quadrinhos</h1>
 
-          <S.SearchBar isLoading={isLoading}>
+          <S.SearchBar
+            data-testid='search-bar'
+            isLoading={isLoadingSearch}
+            data-loading={isLoadingSearch}
+          >
             <input
               type='text'
               aria-details='Barra de busca'
               placeholder='Digite um quadrinho para buscar...'
             />
-            <button>{isLoading ? <FaSpinner /> : <AiOutlineSearch />}</button>
+            <button>{isLoadingSearch ? <FaSpinner /> : <AiOutlineSearch />}</button>
           </S.SearchBar>
         </S.HomeHeading>
 
