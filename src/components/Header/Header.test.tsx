@@ -4,7 +4,7 @@ import { ComicsListContext, IComicsListContext } from 'contexts/ComicsList.conte
 import { renderWithTheme, mockComicsListContextValue } from 'utils/tests.utils';
 
 /**
- * @factory fabrica o S.U.T (System under test), que neste caso, é o componente Header
+ * @factory fabrica o S.U.T (system under test), que neste caso, é o componente Header
  */
 const makeSut = (comicsListContextValue: IComicsListContext) => {
   renderWithTheme(
