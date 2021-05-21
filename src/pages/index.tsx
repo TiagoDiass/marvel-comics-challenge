@@ -18,7 +18,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchComics() {
       // buscando dados da API, tipando o retorno deles para depois transformá-los para o formato que o componente espera
-      // const response = await api.get('/v1/public/comics?limit=16');
+      const response = await api.get('/v1/public/comics', { params: { limit: 12 } });
       const unformattedComics: APIComic[] = mock.results;
 
       const formatedComics: Comic[] = unformattedComics.map(comic => ({
