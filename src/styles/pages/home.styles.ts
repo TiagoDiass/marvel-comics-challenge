@@ -13,6 +13,14 @@ export const HomeContainer = styled.main`
   /* background-color: blue; */
   background-color: ${({ theme }) => theme.colors.white};
   padding: 1rem 8rem;
+
+  @media (max-width: 960px) {
+    padding: 1rem 4rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem 2rem;
+  }
 `;
 
 export const ComicsWrapper = styled.section`
@@ -22,6 +30,18 @@ export const ComicsWrapper = styled.section`
   grid-template-columns: repeat(4, 1fr);
   column-gap: 2rem;
   row-gap: 1.2rem;
+
+  @media (max-width: 1640px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 1280px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ComicBlock = styled.article<{ thumbnail: string }>`
@@ -64,6 +84,12 @@ export const ComicBlock = styled.article<{ thumbnail: string }>`
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+
+  @media (max-width: 1280px) {
+    h4 {
+      font-size: 1.3rem;
     }
   }
 `;
