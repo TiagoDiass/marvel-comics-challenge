@@ -34,7 +34,6 @@ export const HomeHeading = styled.div`
     flex-direction: column;
     height: 80px;
     row-gap: 0.5rem;
-    border: 1px solid red;
   }
 `;
 
@@ -101,7 +100,6 @@ export const SearchBar = styled.div<{ isLoading: boolean }>`
 `;
 
 export const ComicsWrapper = styled.section`
-  /* background-color: yellow; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 2rem;
