@@ -89,4 +89,29 @@ describe('Home page', () => {
       title: 'Adicionado com sucesso',
     });
   });
+
+  it('should call removeComic() from context and toast.fire() when user clicks on "remove from list"', async () => {
+    const mockComicsContext: IComicsListContext = {
+      ...mockComicsListContextValue(),
+      isComicAlreadyInList: () => true, // mockando contexto para retornar que o comic já está na lista, assim o componente chamará o removeComic()
+    };
+    await makeSut(mockComicsContext);
+    const firstComicFromAPI = mockAPIResponse.data.data.results[0];
+
+    const comic = screen.getByRole('heading', { name: firstComicFromAPI.title }).parentElement; // obtendo o elemento do primeiro comic para fazer os asserts
+    const removeFromListButton = comic.querySelector('a.remove-or-add-to-list');
+
+    userEvent.click(removeFromListButton); // clicando no botão de adicionar à lista
+
+    // verificando se o addComic() foi chamado com os params esperados
+    expect(mockComicsContext.removeComic).toHaveBeenCalledWith(
+      expect.objectContaining({ id: firstComicFromAPI.id })
+    );
+
+    // verificando se o Toast.fire() foi chamado com os params esperados
+    expect(Toast.fire).toHaveBeenCalledWith({
+      icon: 'success',
+      title: 'Removido com sucesso',
+    });
+  });
 });
