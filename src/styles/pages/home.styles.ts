@@ -1,4 +1,5 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
+import { Animations } from 'styles';
 
 export const PageContainer = styled.div`
   display: flex;
@@ -20,16 +21,6 @@ export const HomeContainer = styled.main`
 
   @media (max-width: 768px) {
     padding: 1rem 2rem;
-  }
-`;
-
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 `;
 
@@ -89,7 +80,7 @@ export const SearchBar = styled.div<{ isLoading: boolean }>`
         transition: all 0.2s ease;
         animation: ${isLoading
           ? css`
-              ${rotate} 1.3s linear infinite
+              ${Animations.rotate} 1.3s linear infinite
             `
           : 'none'};
       }
@@ -111,7 +102,6 @@ export const SearchBar = styled.div<{ isLoading: boolean }>`
 
 export const ComicsWrapper = styled.section`
   /* background-color: yellow; */
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 2rem;
@@ -131,6 +121,7 @@ export const ComicsWrapper = styled.section`
 `;
 
 export const ComicBlock = styled.article<{ thumbnail: string }>`
+  animation: ${Animations.fadeFromLeft} 0.5s ease;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
     url('${({ thumbnail }) => thumbnail}');
   background-repeat: no-repeat;
