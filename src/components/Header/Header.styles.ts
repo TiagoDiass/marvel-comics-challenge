@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
 
   display: flex;
   align-items: center;
-  padding: 2rem 6rem;
+  padding: 2rem 8rem;
   border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
 `;
 
