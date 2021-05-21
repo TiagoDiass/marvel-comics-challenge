@@ -18,7 +18,7 @@ const makeSut = (comicsListContextValue: IComicsListContext) => {
 };
 
 describe('Home page', () => {
-  it('should call api.get when page renders', async () => {
+  it('should call api.get with the correct values when page renders', async () => {
     makeSut(mockComicsListContextValue());
 
     await waitFor(() => screen.getByRole('heading', { name: /quadrinhos/i })); // esperando até achar o heading pra poder fazer os asserts
