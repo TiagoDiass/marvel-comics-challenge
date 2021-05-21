@@ -46,7 +46,7 @@ export default function Home() {
                 <h4>{comic.title}</h4>
 
                 <div className='links-wrapper'>
-                  <a className='add-to-list-a'>Adicionar a lista</a>
+                  <a className='add-to-list-a'>Adicionar à lista</a>
                   <a className='details-a'>Detalhes</a>
                 </div>
               </S.ComicBlock>
