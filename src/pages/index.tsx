@@ -67,10 +67,11 @@ export default function Home() {
     });
 
     setCurrentPage(currentPage => currentPage + 1);
+    const responseResults = response.data.data.results;
 
     // para setar o loadedAll, precisamos ver se tudo com o determinado filtro já foi carregado, basta verificar se a API retornou um array com tamanho maior que 0
-    if (response.data.data.results.length > 0) {
-      const unformattedComics: APIComic[] = response.data.data.results;
+    if (responseResults.length > 0) {
+      const unformattedComics: APIComic[] = responseResults;
 
       const newComics: Comic[] = unformattedComics.map(comic => ({
         id: comic.id,
