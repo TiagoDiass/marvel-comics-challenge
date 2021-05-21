@@ -14,19 +14,20 @@ jest.spyOn(api, 'get').mockResolvedValue(mockAPIResponse);
 /**
  * @factory fabrica o S.U.T (system under test), que neste caso, é o componente/página Home
  */
-const makeSut = (comicsListContextValue: IComicsListContext) => {
+const makeSut = async (comicsListContextValue: IComicsListContext) => {
   renderWithTheme(
     <ComicsListContext.Provider value={comicsListContextValue}>
       <Home />
     </ComicsListContext.Provider>
   );
+
+  // esperando até achar o heading pra poder fazer os asserts, padrão da RTL para aguardar ações assíncronas. Se não usar isso a RTL dá alguns warnings no terminal
+  await waitFor(() => screen.getByRole('heading', { name: /quadrinhos/i }));
 };
 
 describe('Home page', () => {
   it('should call api.get with the correct values when page renders', async () => {
-    makeSut(mockComicsListContextValue());
-
-    await waitFor(() => screen.getByRole('heading', { name: /quadrinhos/i })); // esperando até achar o heading pra poder fazer os asserts, padrão da RTL
+    await makeSut(mockComicsListContextValue());
 
     expect(api.get).toHaveBeenCalledWith('/v1/public/comics', {
       params: {
@@ -36,9 +37,7 @@ describe('Home page', () => {
   });
 
   it('should start with search bar empty and not loading', async () => {
-    makeSut(mockComicsListContextValue());
-
-    await waitFor(() => screen.getByRole('heading'));
+    await makeSut(mockComicsListContextValue());
 
     const searchBar = screen.getByTestId('search-bar'); // obtendo o elemento da search bar inteira
     const searchBarInput = screen.getByRole('textbox'); // obtendo o input da search bar
@@ -47,10 +46,8 @@ describe('Home page', () => {
   });
 
   it('should render comics correctly', async () => {
-    makeSut(mockComicsListContextValue());
+    await makeSut(mockComicsListContextValue());
     const mockAPIResults = mockAPIResponse.data.data.results;
-
-    await waitFor(() => screen.getByRole('heading'));
 
     const comicsSection = screen.getByTestId('comics-wrapper');
     expect(comicsSection.children).toHaveLength(mockAPIResults.length);
