@@ -5,6 +5,7 @@ export default {
     secondary: 'rgb(118, 174, 199)',
     secondaryDarker: 'rgb(0, 45, 74)',
     white: '#fff',
+    whiteDarker: '#f9f9f9',
     black: '#222',
   },
 

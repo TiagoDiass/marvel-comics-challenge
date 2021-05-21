@@ -18,6 +18,10 @@ const globalStyles = createGlobalStyle`
       font-size: 87.5%; // 14px
     }
   }
+
+  body {
+    font-family: ${({ theme }) => theme.fonts.default};
+  }
 `;
 
 export default globalStyles;
