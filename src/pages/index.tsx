@@ -1,11 +1,10 @@
+import mock from '../../mock.json';
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { APIComic, Comic } from '@types';
 import api from 'services/api';
 import { Toast } from 'plugins/sweetAlert';
-import mock from '../../mock.json';
 import { useComicsListContext } from 'contexts/ComicsList.context';
-import Header from 'components/Header/Header';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaSpinner } from 'react-icons/fa';
 import * as S from 'styles/pages/home.styles';
@@ -26,6 +25,8 @@ export default function Home() {
         id: comic.id,
         title: comic.title,
         thumbnailUrl: `${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`,
+        totalPageCount: comic.pageCount,
+        creators: comic.creators.items.map(creator => creator.name),
       }));
 
       setComics(formatedComics);
@@ -56,53 +57,49 @@ export default function Home() {
         <title>ComicsExplorer | Home</title>
       </Head>
 
-      <S.PageContainer>
-        <Header />
+      <S.HomeContainer>
+        <S.HomeHeading>
+          <h1>Quadrinhos</h1>
 
-        <S.HomeContainer>
-          <S.HomeHeading>
-            <h1>Quadrinhos</h1>
+          <S.SearchBar isLoading={isLoading}>
+            <input
+              type='text'
+              aria-details='Barra de busca'
+              placeholder='Digite um quadrinho para buscar...'
+            />
+            <button>{isLoading ? <FaSpinner /> : <AiOutlineSearch />}</button>
+          </S.SearchBar>
+        </S.HomeHeading>
 
-            <S.SearchBar isLoading={isLoading}>
-              <input
-                type='text'
-                aria-details='Barra de busca'
-                placeholder='Digite um quadrinho para buscar...'
-              />
-              <button>{isLoading ? <FaSpinner /> : <AiOutlineSearch />}</button>
-            </S.SearchBar>
-          </S.HomeHeading>
+        <S.ComicsWrapper>
+          {comics.map(comic => (
+            <S.ComicBlock key={comic.id} thumbnail={comic.thumbnailUrl}>
+              <h4>{comic.title}</h4>
 
-          <S.ComicsWrapper>
-            {comics.map(comic => (
-              <S.ComicBlock key={comic.id} thumbnail={comic.thumbnailUrl}>
-                <h4>{comic.title}</h4>
+              <div className='links-wrapper'>
+                <a
+                  className='add-to-list-a'
+                  onClick={() =>
+                    isComicAlreadyInList(comic)
+                      ? handleRemoveComicOfList(comic)
+                      : handleAddComicToList(comic)
+                  }
+                >
+                  {isComicAlreadyInList(comic) ? 'Remover da lista' : 'Adicionar à lista'}
+                </a>
+                <a className='details-a'>Detalhes</a>
+              </div>
+            </S.ComicBlock>
+          ))}
+        </S.ComicsWrapper>
 
-                <div className='links-wrapper'>
-                  <a
-                    className='add-to-list-a'
-                    onClick={() =>
-                      isComicAlreadyInList(comic)
-                        ? handleRemoveComicOfList(comic)
-                        : handleAddComicToList(comic)
-                    }
-                  >
-                    {isComicAlreadyInList(comic) ? 'Remover da lista' : 'Adicionar à lista'}
-                  </a>
-                  <a className='details-a'>Detalhes</a>
-                </div>
-              </S.ComicBlock>
-            ))}
-          </S.ComicsWrapper>
-
-          <S.LoadMoreButton
-            isLoadingMore={isLoadingMore}
-            onClick={() => setIsLoadingMore(!isLoadingMore)}
-          >
-            {isLoadingMore ? 'Carregando...' : 'Carregar mais'}
-          </S.LoadMoreButton>
-        </S.HomeContainer>
-      </S.PageContainer>
+        <S.LoadMoreButton
+          isLoadingMore={isLoadingMore}
+          onClick={() => setIsLoadingMore(!isLoadingMore)}
+        >
+          {isLoadingMore ? 'Carregando...' : 'Carregar mais'}
+        </S.LoadMoreButton>
+      </S.HomeContainer>
     </>
   );
 }

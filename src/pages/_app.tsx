@@ -1,3 +1,4 @@
+import Header from 'components/Header/Header';
 import { ComicsListContextProvider } from 'contexts/ComicsList.context';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles, theme } from 'styles';
@@ -10,6 +11,7 @@ export default function App({ Component, pageProps }) {
         <GlobalStyles />
 
         <ComicsListContextProvider>
+          <Header />
           <Component {...pageProps} />
         </ComicsListContextProvider>
       </ThemeProvider>
