@@ -2144,5 +2144,2128 @@
         "returned": 0
       }
     }
-  ]
+  ],
+
+  "response": {
+    "code": 200,
+    "status": "Ok",
+    "copyright": "© 2021 MARVEL",
+    "attributionText": "Data provided by Marvel. © 2021 MARVEL",
+    "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2021 MARVEL</a>",
+    "etag": "2cdd6bd829a3e79595d097f6a11ed64385d1a0dc",
+    "data": {
+      "offset": 0,
+      "limit": 16,
+      "total": 1565,
+      "count": 16,
+      "results": [
+        {
+          "id": 59551,
+          "digitalId": 0,
+          "title": "Spider-Man (2016) #6 (Anka Mighty Men Variant)",
+          "issueNumber": 6,
+          "variantDescription": "Anka Mighty Men Variant",
+          "description": null,
+          "modified": "2016-07-21T17:22:23-0400",
+          "isbn": "",
+          "upc": "75960608314500621",
+          "diamondCode": "",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 32,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/59551",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/59551/spider-man_2016_6_anka_mighty_men_variant/anka_mighty_men_variant?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/20508",
+            "name": "Spider-Man (2016 - 2018)"
+          },
+          "variants": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/55700",
+              "name": "Spider-Man (2016) #6"
+            }
+          ],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2029-12-31T00:00:00-0500"
+            },
+            {
+              "type": "focDate",
+              "date": "2016-07-13T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 3.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/a/30/56f46483efc4f",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/59551/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/11575",
+                "name": "Kris Anka",
+                "role": "penciller (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/4300",
+                "name": "Nick Lowe",
+                "role": "editor"
+              }
+            ],
+            "returned": 2
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/59551/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/59551/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/129608",
+                "name": "cover from Spider-Man (2016) #6 (ANKA MOP VARIANT)",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/129609",
+                "name": "story from Spider-Man (2016) #6 (ANKA MOP VARIANT)",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/59551/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 92837,
+          "digitalId": 0,
+          "title": "Spider-Woman (2020) #13",
+          "issueNumber": 13,
+          "variantDescription": "",
+          "description": null,
+          "modified": "2021-04-02T09:07:58-0400",
+          "isbn": "",
+          "upc": "75960609671801311",
+          "diamondCode": "",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 32,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/92837",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/92837/spider-woman_2020_13?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/28048",
+            "name": "Spider-Woman (2020 - Present)"
+          },
+          "variants": [],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-07-14T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-06-21T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 3.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/f/70/60a5311d85310",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/f/70/60a5311d85310",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 6,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92837/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/8504",
+                "name": "Frank D'ARMATA",
+                "role": "colorist"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12993",
+                "name": "Vc Travis Lanham",
+                "role": "letterer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/4300",
+                "name": "Nick Lowe",
+                "role": "editor"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/13125",
+                "name": "Karla Pacheco",
+                "role": "writer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/7909",
+                "name": "Pere Perez",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12303",
+                "name": "Jung-Geun Yoon",
+                "role": "penciler (cover)"
+              }
+            ],
+            "returned": 6
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92837/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92837/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/206773",
+                "name": "cover from Spider-Woman (2020) #13",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/206774",
+                "name": "story from Spider-Woman (2020) #13",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92837/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 80637,
+          "digitalId": 0,
+          "title": "Spider-Man: Spider’S Shadow (2021) #4",
+          "issueNumber": 4,
+          "variantDescription": "",
+          "description": null,
+          "modified": "2021-04-06T09:04:04-0400",
+          "isbn": "",
+          "upc": "75960609546900411",
+          "diamondCode": "",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 32,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/80637",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/80637/spider-man_spiders_shadow_2021_4?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/28397",
+            "name": "Spider-Man: Spider’S Shadow (2021 - Present)"
+          },
+          "variants": [],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-07-14T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-06-21T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 3.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/20/60a531006ca43",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/20/60a531006ca43",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 6,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80637/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/5251",
+                "name": "Vc Joe Caramagna",
+                "role": "letterer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/365",
+                "name": "Pasqual Ferry",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/507",
+                "name": "Matt Hollingsworth",
+                "role": "colorist"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                "name": "Wilson Moss",
+                "role": "editor"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/13459",
+                "name": "Phil Noto",
+                "role": "painter (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12494",
+                "name": "Chip Zdarsky",
+                "role": "writer"
+              }
+            ],
+            "returned": 6
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80637/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80637/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/178400",
+                "name": "cover from What If? (2029) #4",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/178401",
+                "name": "story from What If? (2029) #4",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80637/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 80636,
+          "digitalId": 0,
+          "title": "Spider-Man: Spider’S Shadow (2021) #3",
+          "issueNumber": 3,
+          "variantDescription": "",
+          "description": null,
+          "modified": "2021-02-18T09:10:33-0500",
+          "isbn": "",
+          "upc": "75960609546900311",
+          "diamondCode": "APR210894",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 32,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/80636",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/80636/spider-man_spiders_shadow_2021_3?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/28397",
+            "name": "Spider-Man: Spider’S Shadow (2021 - Present)"
+          },
+          "variants": [],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-06-09T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-05-17T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 3.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/60/609ee5c00e4b9",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/60/609ee5c00e4b9",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 6,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80636/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/5251",
+                "name": "Vc Joe Caramagna",
+                "role": "letterer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/365",
+                "name": "Pasqual Ferry",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/507",
+                "name": "Matt Hollingsworth",
+                "role": "colorist"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                "name": "Wilson Moss",
+                "role": "editor"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/13459",
+                "name": "Phil Noto",
+                "role": "penciler (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12494",
+                "name": "Chip Zdarsky",
+                "role": "writer"
+              }
+            ],
+            "returned": 6
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80636/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80636/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/178398",
+                "name": "cover from What If? (2029) #3",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/178399",
+                "name": "story from What If? (2029) #3",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80636/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 94448,
+          "digitalId": 0,
+          "title": "Spider-Man: Spider’S Shadow (2021) #2 (Variant)",
+          "issueNumber": 2,
+          "variantDescription": "Variant",
+          "description": null,
+          "modified": "2021-04-06T09:04:01-0400",
+          "isbn": "",
+          "upc": "75960609546900221",
+          "diamondCode": "MAR210571",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 32,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/94448",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/94448/spider-man_spiders_shadow_2021_2_variant/variant?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/28397",
+            "name": "Spider-Man: Spider’S Shadow (2021 - Present)"
+          },
+          "variants": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/80635",
+              "name": "Spider-Man: Spider’S Shadow (2021) #2"
+            }
+          ],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-05-12T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-04-19T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 3.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/c0/6092ed628c3e6",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/c0/6092ed628c3e6",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 4,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94448/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/365",
+                "name": "Pasqual Ferry",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/507",
+                "name": "Matt Hollingsworth",
+                "role": "colorist"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                "name": "Wilson Moss",
+                "role": "editor"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12494",
+                "name": "Chip Zdarsky",
+                "role": "writer"
+              }
+            ],
+            "returned": 4
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94448/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94448/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/210017",
+                "name": "cover from Spider-Man: The Spider’S Shadow (2021) #2 (VARIANT)",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/210018",
+                "name": "story from Spider-Man: The Spider’S Shadow (2021) #2 (VARIANT)",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94448/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 92836,
+          "digitalId": 0,
+          "title": "Spider-Woman (2020) #12",
+          "issueNumber": 12,
+          "variantDescription": "",
+          "description": null,
+          "modified": "2021-01-28T09:06:02-0500",
+          "isbn": "",
+          "upc": "75960609671801211",
+          "diamondCode": "MAR210616",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 32,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/92836",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/92836/spider-woman_2020_12?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            },
+            {
+              "type": "purchase",
+              "url": "http://comicstore.marvel.com/Spider-Woman-12/digital-comic/56819?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/28048",
+            "name": "Spider-Woman (2020 - Present)"
+          },
+          "variants": [],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-05-12T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-04-19T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 3.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/d/40/608731841044e",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/d/40/608731841044e",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 6,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92836/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/8504",
+                "name": "Frank D'ARMATA",
+                "role": "colorist"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12993",
+                "name": "Vc Travis Lanham",
+                "role": "letterer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/4300",
+                "name": "Nick Lowe",
+                "role": "editor"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/13125",
+                "name": "Karla Pacheco",
+                "role": "writer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/7909",
+                "name": "Pere Perez",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12303",
+                "name": "Jung-Geun Yoon",
+                "role": "penciler (cover)"
+              }
+            ],
+            "returned": 6
+          },
+          "characters": {
+            "available": 1,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92836/characters",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009608",
+                "name": "Spider-Woman (Jessica Drew)"
+              }
+            ],
+            "returned": 1
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92836/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/206771",
+                "name": "cover from Spider-Woman (2020) #12",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/206772",
+                "name": "story from Spider-Woman (2020) #12",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92836/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 80635,
+          "digitalId": 0,
+          "title": "Spider-Man: Spider’S Shadow (2021) #2",
+          "issueNumber": 2,
+          "variantDescription": "",
+          "description": null,
+          "modified": "2020-12-18T09:04:08-0500",
+          "isbn": "",
+          "upc": "75960609546900211",
+          "diamondCode": "MAR210570",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 32,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/80635",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/80635/spider-man_spiders_shadow_2021_2?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            },
+            {
+              "type": "purchase",
+              "url": "http://comicstore.marvel.com/Spider-Man-Spider-S-Shadow-2/digital-comic/56818?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/28397",
+            "name": "Spider-Man: Spider’S Shadow (2021 - Present)"
+          },
+          "variants": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/94448",
+              "name": "Spider-Man: Spider’S Shadow (2021) #2 (Variant)"
+            }
+          ],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-05-12T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-04-19T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 3.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/80/6087319b7edc0",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/80/6087319b7edc0",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 5,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80635/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/5251",
+                "name": "Vc Joe Caramagna",
+                "role": "letterer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/365",
+                "name": "Pasqual Ferry",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/507",
+                "name": "Matt Hollingsworth",
+                "role": "colorist"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                "name": "Wilson Moss",
+                "role": "editor"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12494",
+                "name": "Chip Zdarsky",
+                "role": "writer"
+              }
+            ],
+            "returned": 5
+          },
+          "characters": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80635/characters",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009708",
+                "name": "Mary Jane Watson"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009610",
+                "name": "Spider-Man"
+              }
+            ],
+            "returned": 2
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80635/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/178396",
+                "name": "cover from What If? (2029) #2",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/178397",
+                "name": "story from What If? (2029) #2",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80635/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 92795,
+          "digitalId": 0,
+          "title": "Spider-Man: Curse Of The Man-Thing (2021) #1",
+          "issueNumber": 1,
+          "variantDescription": "",
+          "description": null,
+          "modified": "2021-04-20T17:05:28-0400",
+          "isbn": "",
+          "upc": "75960620078800111",
+          "diamondCode": "FEB210573",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 40,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/92795",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/92795/spider-man_curse_of_the_man-thing_2021_1?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            },
+            {
+              "type": "purchase",
+              "url": "http://comicstore.marvel.com/Spider-Man-Curse-Of-The-Man-Thing-1/digital-comic/56515?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/31710",
+            "name": "Spider-Man: Curse Of The Man-Thing (2021)"
+          },
+          "variants": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/94029",
+              "name": "Spider-Man: Curse Of The Man-Thing (2021) #1 (Variant)"
+            }
+          ],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-04-28T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-04-05T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 4.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/1/20/6077178687bb4",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/1/20/6077178687bb4",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 5,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92795/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/1004",
+                "name": "Daniel Acuna",
+                "role": "penciler (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/10172",
+                "name": "Vc Clayton Cowles",
+                "role": "letterer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12460",
+                "name": "Marco Failla",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/14104",
+                "name": "Steve Orlando",
+                "role": "writer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/4600",
+                "name": "Mark Paniccia",
+                "role": "editor"
+              }
+            ],
+            "returned": 5
+          },
+          "characters": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92795/characters",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009420",
+                "name": "Man-Thing"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009610",
+                "name": "Spider-Man"
+              }
+            ],
+            "returned": 2
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92795/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/206689",
+                "name": "cover from Spider-Man: Man-Thing (2021) #1",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/206690",
+                "name": "story from Spider-Man: Man-Thing (2021) #1",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92795/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 94029,
+          "digitalId": 0,
+          "title": "Spider-Man: Curse Of The Man-Thing (2021) #1 (Variant)",
+          "issueNumber": 1,
+          "variantDescription": "Variant",
+          "description": null,
+          "modified": "2021-02-18T09:10:23-0500",
+          "isbn": "",
+          "upc": "75960620078800121",
+          "diamondCode": "FEB210574",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 40,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/94029",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/94029/spider-man_curse_of_the_man-thing_2021_1_variant/variant?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/31710",
+            "name": "Spider-Man: Curse Of The Man-Thing (2021)"
+          },
+          "variants": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/92795",
+              "name": "Spider-Man: Curse Of The Man-Thing (2021) #1"
+            }
+          ],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-04-28T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-04-05T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 4.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/10/607f1f4cc404d",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/10/607f1f4cc404d",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 8,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94029/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/11875",
+                "name": "Nick Bradshaw",
+                "role": "inker (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/10172",
+                "name": "Vc Clayton Cowles",
+                "role": "letterer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12239",
+                "name": "Guru Efx",
+                "role": "colorist"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12460",
+                "name": "Marco Failla",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/13631",
+                "name": "Minkyu Jung",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/426",
+                "name": "Jason Keith",
+                "role": "colorist (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/14104",
+                "name": "Steve Orlando",
+                "role": "writer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/4600",
+                "name": "Mark Paniccia",
+                "role": "editor"
+              }
+            ],
+            "returned": 8
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94029/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94029/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/209173",
+                "name": "cover from Spider-Man: Curse of the Man-Thing (2021) #1",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/209174",
+                "name": "story from Spider-Man: Curse of the Man-Thing (2021) #1",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94029/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 92004,
+          "digitalId": 0,
+          "title": "Spider-Man By Roger Stern Omnibus (Hardcover)",
+          "issueNumber": 0,
+          "variantDescription": "",
+          "description": null,
+          "modified": "2021-04-20T10:00:29-0400",
+          "isbn": "978-1-302-92837-7",
+          "upc": "",
+          "diamondCode": "OCT200681",
+          "ean": "9781302 928377 59999",
+          "issn": "",
+          "format": "Hardcover",
+          "pageCount": 1296,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/92004",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/collection/92004/spider-man_by_roger_stern_omnibus_hardcover?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            },
+            {
+              "type": "purchase",
+              "url": "http://comicstore.marvel.com/Spider-Man-By-Roger-Stern-Omnibus-0/digital-comic/57123?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/31456",
+            "name": "Spider-Man By Roger Stern Omnibus (2021)"
+          },
+          "variants": [],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-04-21T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2020-11-23T00:00:00-0500"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 125
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/f0/6079c348c6b8c",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/f0/6079c348c6b8c",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 7,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92004/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/11401",
+                "name": "Various",
+                "role": "penciller"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/5764",
+                "name": "Ron Frenz",
+                "role": "penciller"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/389",
+                "name": "Jim Mooney",
+                "role": "penciller"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/198",
+                "name": "Marie Severin",
+                "role": "penciller"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/13196",
+                "name": "John Romita Jr.",
+                "role": "penciller (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/958",
+                "name": "Roger Stern",
+                "role": "writer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/4430",
+                "name": "Jeff Youngquist",
+                "role": "editor"
+              }
+            ],
+            "returned": 7
+          },
+          "characters": {
+            "available": 1,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92004/characters",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009610",
+                "name": "Spider-Man"
+              }
+            ],
+            "returned": 1
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92004/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/205094",
+                "name": "cover from SPIDER-MAN BY ROGER STERN OMNIBUS HC (2021) #1",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/205095",
+                "name": "story from SPIDER-MAN BY ROGER STERN OMNIBUS HC (2021) #1",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92004/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 94033,
+          "digitalId": 0,
+          "title": "Spider-Woman (2020) #11 (Variant)",
+          "issueNumber": 11,
+          "variantDescription": "Variant",
+          "description": null,
+          "modified": "2021-01-23T09:08:47-0500",
+          "isbn": "",
+          "upc": "75960609671801131",
+          "diamondCode": "FEB210589",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 32,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/94033",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/94033/spider-woman_2020_11_variant/variant?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/28048",
+            "name": "Spider-Woman (2020 - Present)"
+          },
+          "variants": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/92835",
+              "name": "Spider-Woman (2020) #11"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/93601",
+              "name": "Spider-Woman (2020) #11 (Variant)"
+            }
+          ],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-04-21T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-03-29T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 3.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/10/60771ab132d59",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/10/60771ab132d59",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 8,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94033/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/2133",
+                "name": "Tom Brevoort",
+                "role": "editor"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/8504",
+                "name": "Frank D'ARMATA",
+                "role": "colorist"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/13247",
+                "name": "Rafael Fonteriz",
+                "role": "inker (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12993",
+                "name": "Vc Travis Lanham",
+                "role": "letterer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/1405",
+                "name": "Matt Milla",
+                "role": "colorist (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/101",
+                "name": "Carlos Pacheco",
+                "role": "penciler (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/13125",
+                "name": "Karla Pacheco",
+                "role": "writer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/7909",
+                "name": "Pere Perez",
+                "role": "inker"
+              }
+            ],
+            "returned": 8
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94033/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94033/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/209181",
+                "name": "cover from Spider-Woman (2020) #11",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/209182",
+                "name": "story from Spider-Woman (2020) #11",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94033/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 92835,
+          "digitalId": 0,
+          "title": "Spider-Woman (2020) #11",
+          "issueNumber": 11,
+          "variantDescription": "",
+          "description": null,
+          "modified": "2020-09-17T09:04:11-0400",
+          "isbn": "",
+          "upc": "75960609671801111",
+          "diamondCode": "FEB210587",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 32,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/92835",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/92835/spider-woman_2020_11?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            },
+            {
+              "type": "purchase",
+              "url": "http://comicstore.marvel.com/Spider-Woman-11/digital-comic/56517?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/28048",
+            "name": "Spider-Woman (2020 - Present)"
+          },
+          "variants": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/93601",
+              "name": "Spider-Woman (2020) #11 (Variant)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/94033",
+              "name": "Spider-Woman (2020) #11 (Variant)"
+            }
+          ],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-04-21T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-03-29T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 3.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/03/607717d6a7319",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/03/607717d6a7319",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 6,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92835/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/8504",
+                "name": "Frank D'ARMATA",
+                "role": "colorist"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12993",
+                "name": "Vc Travis Lanham",
+                "role": "letterer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/4300",
+                "name": "Nick Lowe",
+                "role": "editor"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/13125",
+                "name": "Karla Pacheco",
+                "role": "writer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/7909",
+                "name": "Pere Perez",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12303",
+                "name": "Jung-Geun Yoon",
+                "role": "penciler (cover)"
+              }
+            ],
+            "returned": 6
+          },
+          "characters": {
+            "available": 1,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92835/characters",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009608",
+                "name": "Spider-Woman (Jessica Drew)"
+              }
+            ],
+            "returned": 1
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92835/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/206769",
+                "name": "cover from Spider-Woman (2020) #11",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/206770",
+                "name": "story from Spider-Woman (2020) #11",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/92835/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 93601,
+          "digitalId": 0,
+          "title": "Spider-Woman (2020) #11 (Variant)",
+          "issueNumber": 11,
+          "variantDescription": "Variant",
+          "description": null,
+          "modified": "2021-01-23T09:08:45-0500",
+          "isbn": "",
+          "upc": "75960609671801121",
+          "diamondCode": "FEB210588",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 32,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/93601",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/93601/spider-woman_2020_11_variant/variant?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/28048",
+            "name": "Spider-Woman (2020 - Present)"
+          },
+          "variants": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/92835",
+              "name": "Spider-Woman (2020) #11"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/94033",
+              "name": "Spider-Woman (2020) #11 (Variant)"
+            }
+          ],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-04-21T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-03-29T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 3.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/b0/60771ab0e1354",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/b0/60771ab0e1354",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 6,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/93601/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/1004",
+                "name": "Daniel Acuna",
+                "role": "colorist (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/8504",
+                "name": "Frank D'ARMATA",
+                "role": "colorist"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12993",
+                "name": "Vc Travis Lanham",
+                "role": "letterer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/4300",
+                "name": "Nick Lowe",
+                "role": "editor"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/13125",
+                "name": "Karla Pacheco",
+                "role": "writer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/7909",
+                "name": "Pere Perez",
+                "role": "inker (cover)"
+              }
+            ],
+            "returned": 6
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/93601/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/93601/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/208317",
+                "name": "cover from Spider-Woman (2020) #11 (VARIANT)",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/208318",
+                "name": "story from Spider-Woman (2020) #11 (VARIANT)",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/93601/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 94031,
+          "digitalId": 0,
+          "title": "Spider-Man: Spider’S Shadow (2021) #1 (Variant)",
+          "issueNumber": 1,
+          "variantDescription": "Variant",
+          "description": null,
+          "modified": "2021-04-06T09:03:45-0400",
+          "isbn": "",
+          "upc": "75960609546900131",
+          "diamondCode": "FEB210550",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 40,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/94031",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/94031/spider-man_spiders_shadow_2021_1_variant/variant?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/28397",
+            "name": "Spider-Man: Spider’S Shadow (2021 - Present)"
+          },
+          "variants": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/94032",
+              "name": "Spider-Man: Spider’S Shadow (2021) #1 (Variant)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/80634",
+              "name": "Spider-Man: Spider’S Shadow (2021) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/94030",
+              "name": "Spider-Man: Spider’S Shadow (2021) #1 (Variant)"
+            }
+          ],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-04-14T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-03-22T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 4.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/40/606fd52c6a52e",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/40/606fd52c6a52e",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 5,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94031/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/5251",
+                "name": "Vc Joe Caramagna",
+                "role": "letterer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/365",
+                "name": "Pasqual Ferry",
+                "role": "penciler (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/507",
+                "name": "Matt Hollingsworth",
+                "role": "colorist"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                "name": "Wilson Moss",
+                "role": "editor"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12494",
+                "name": "Chip Zdarsky",
+                "role": "writer"
+              }
+            ],
+            "returned": 5
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94031/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94031/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/209177",
+                "name": "cover from Spider-Man: The Spider’S Shadow (2021) #1",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/209178",
+                "name": "story from Spider-Man: The Spider’S Shadow (2021) #1",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94031/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 80634,
+          "digitalId": 0,
+          "title": "Spider-Man: Spider’S Shadow (2021) #1",
+          "issueNumber": 1,
+          "variantDescription": "",
+          "description": null,
+          "modified": "2021-04-09T00:43:13-0400",
+          "isbn": "",
+          "upc": "75960609546900111",
+          "diamondCode": "FEB210549",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 40,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/80634",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/80634/spider-man_spiders_shadow_2021_1?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            },
+            {
+              "type": "purchase",
+              "url": "http://comicstore.marvel.com/Spider-Man-Spider-s-Shadow-1/digital-comic/56516?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/28397",
+            "name": "Spider-Man: Spider’S Shadow (2021 - Present)"
+          },
+          "variants": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/94030",
+              "name": "Spider-Man: Spider’S Shadow (2021) #1 (Variant)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/94031",
+              "name": "Spider-Man: Spider’S Shadow (2021) #1 (Variant)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/94032",
+              "name": "Spider-Man: Spider’S Shadow (2021) #1 (Variant)"
+            }
+          ],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-04-14T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-03-22T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 4.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/80/606f6203a7f48",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/80/606f6203a7f48",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 6,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80634/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/5251",
+                "name": "Vc Joe Caramagna",
+                "role": "letterer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/365",
+                "name": "Pasqual Ferry",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/507",
+                "name": "Matt Hollingsworth",
+                "role": "colorist"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                "name": "Wilson Moss",
+                "role": "editor"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/13459",
+                "name": "Phil Noto",
+                "role": "painter (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12494",
+                "name": "Chip Zdarsky",
+                "role": "writer"
+              }
+            ],
+            "returned": 6
+          },
+          "characters": {
+            "available": 1,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80634/characters",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009610",
+                "name": "Spider-Man"
+              }
+            ],
+            "returned": 1
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80634/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/178394",
+                "name": "cover from What If? (2029) #1",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/178395",
+                "name": "story from What If? (2029) #1",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/80634/events",
+            "items": [],
+            "returned": 0
+          }
+        },
+        {
+          "id": 94030,
+          "digitalId": 0,
+          "title": "Spider-Man: Spider’S Shadow (2021) #1 (Variant)",
+          "issueNumber": 1,
+          "variantDescription": "Variant",
+          "description": null,
+          "modified": "2021-04-06T09:03:44-0400",
+          "isbn": "",
+          "upc": "75960609546900121",
+          "diamondCode": "FEB210552",
+          "ean": "",
+          "issn": "",
+          "format": "Comic",
+          "pageCount": 40,
+          "textObjects": [],
+          "resourceURI": "http://gateway.marvel.com/v1/public/comics/94030",
+          "urls": [
+            {
+              "type": "detail",
+              "url": "http://marvel.com/comics/issue/94030/spider-man_spiders_shadow_2021_1_variant/variant?utm_campaign=apiRef&utm_source=64d9a897f3185c2a2c031a82d8ed22cf"
+            }
+          ],
+          "series": {
+            "resourceURI": "http://gateway.marvel.com/v1/public/series/28397",
+            "name": "Spider-Man: Spider’S Shadow (2021 - Present)"
+          },
+          "variants": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/80634",
+              "name": "Spider-Man: Spider’S Shadow (2021) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/94031",
+              "name": "Spider-Man: Spider’S Shadow (2021) #1 (Variant)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/94032",
+              "name": "Spider-Man: Spider’S Shadow (2021) #1 (Variant)"
+            }
+          ],
+          "collections": [],
+          "collectedIssues": [],
+          "dates": [
+            {
+              "type": "onsaleDate",
+              "date": "2021-04-14T00:00:00-0400"
+            },
+            {
+              "type": "focDate",
+              "date": "2021-03-22T00:00:00-0400"
+            }
+          ],
+          "prices": [
+            {
+              "type": "printPrice",
+              "price": 4.99
+            }
+          ],
+          "thumbnail": {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/5/90/606fd52c10d30",
+            "extension": "jpg"
+          },
+          "images": [
+            {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/5/90/606fd52c10d30",
+              "extension": "jpg"
+            }
+          ],
+          "creators": {
+            "available": 7,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94030/creators",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/5251",
+                "name": "Vc Joe Caramagna",
+                "role": "letterer"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/365",
+                "name": "Pasqual Ferry",
+                "role": "inker"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/507",
+                "name": "Matt Hollingsworth",
+                "role": "colorist"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/658",
+                "name": "Ron Lim",
+                "role": "penciler (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/13127",
+                "name": "Emily Newcomen",
+                "role": "editor"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/13052",
+                "name": "Israel Silva",
+                "role": "colorist (cover)"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12494",
+                "name": "Chip Zdarsky",
+                "role": "writer"
+              }
+            ],
+            "returned": 7
+          },
+          "characters": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94030/characters",
+            "items": [],
+            "returned": 0
+          },
+          "stories": {
+            "available": 2,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94030/stories",
+            "items": [
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/209175",
+                "name": "cover from Spider-Man: The Spider’S Shadow (2021) #1",
+                "type": "cover"
+              },
+              {
+                "resourceURI": "http://gateway.marvel.com/v1/public/stories/209176",
+                "name": "story from Spider-Man: The Spider’S Shadow (2021) #1",
+                "type": "interiorStory"
+              }
+            ],
+            "returned": 2
+          },
+          "events": {
+            "available": 0,
+            "collectionURI": "http://gateway.marvel.com/v1/public/comics/94030/events",
+            "items": [],
+            "returned": 0
+          }
+        }
+      ]
+    }
+  }
 }
