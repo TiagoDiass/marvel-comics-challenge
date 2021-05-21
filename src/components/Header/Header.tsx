@@ -1,5 +1,4 @@
 import * as S from './Header.styles';
-import { useState } from 'react';
 
 export default function Header() {
   return (
