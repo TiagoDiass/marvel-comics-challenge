@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
             rel='stylesheet'
           />
 
-          <link rel='icon' href='/favicon.png' type='image/png' />
+          <link rel='icon' href='/favicon2.png' type='image/png' />
 
           {/* <meta property='og:image' content='/thumbnail.png' />
 
