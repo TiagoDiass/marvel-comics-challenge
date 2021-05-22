@@ -31,8 +31,6 @@ export default function Home() {
       setIsLoading(true);
       const response = await api.get('/v1/public/comics', { params: { limit: 12 } });
 
-      // const response = { data: mock.response };
-
       const unformattedComics: APIComic[] = response.data.data.results;
 
       const formattedComics: Comic[] = unformattedComics.map(comic =>
