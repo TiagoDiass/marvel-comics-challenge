@@ -118,7 +118,7 @@ Um resumo dos teste são:
 - [TypeScript](https://www.typescriptlang.org/) - Typescript é um superset da linguagem JavaScript, usei ele para ganhar mais produtividade durante o desenvolvimento do projeto. Com ele, podemos tipar nossas variáveis, funções, e afins, o que facilita manutenção do código.
 - [Styled Components](https://styled-components.com/) - Styled components é uma biblioteca de CSS-in-JS, nela, escrevemos CSS como SCSS porém dentro de arquivos JavaScript ou TypeScript, o que torna possível deixar nossos estilos mais programáveis. Eu a utilizei para estilizar toda a app.
 - [Axios](https://axios-http.com/) - Axios é uma biblioteca para requisições HTTP, eu a utilizei para consumir a API da Marvel.
-- [React Testing Library](https://testing-library.com/) - React Testing Library é uma biblotecais que permite que possamos testar nossos componentes React de forma simples e rápida. Eu a utilizei com [Jest](https://jestjs.io/pt-BR/), para assim poder testar as páginas, componentes e contextos.
+- [React Testing Library](https://testing-library.com/) - React Testing Library é uma bibloteca que permite que possamos testar nossos componentes React de forma simples e rápida. Eu a utilizei com [Jest](https://jestjs.io/pt-BR/), para assim poder testar as páginas, componentes e contextos.
 - [API de Contexto do React](https://pt-br.reactjs.org/docs/context.html) - A API de contextos do React permite que possamos gerenciar o estado de nosso app de forma mais simples, ela resolve o famoso problema no universo front-end conhecido como [prop-drilling](https://www.alura.com.br/artigos/prop-drilling-no-react-js).
 - [React Modal](https://github.com/reactjs/react-modal) - A React Modal é uma biblioteca para podermos utilizar Modais dentro de aplicações front-end com React.
 - [Sweet Alert](https://sweetalert2.github.io/) - Sweet Alert é uma biblioteca para poder mostrar mensagens de alerta e toasts. A utilizei para fazer os toasts quando o usuário adiciona ou remove um quadrinho da sua lista.
@@ -128,7 +128,7 @@ Um resumo dos teste são:
   :rocket: Deploy
 </h2>
 
-Ao fiz o deploy dessa aplicação na [Vercel](https://vercel.com/). Ela está configurada com uma integração contínua (continuous integration) com este repositório do Github, isso é, toda vez que o código do repositório no Github na branch main tiver uma atualização, a Vercel rodará o build do projeto e o colocará em produção.
+Eu fiz o deploy dessa aplicação na [Vercel](https://vercel.com/). Ela está configurada com uma integração contínua (continuous integration) com este repositório do Github, isso é, toda vez que o código do repositório no Github na branch main tiver uma atualização, a Vercel rodará o build do projeto e o colocará em produção.
 [Clique aqui para ver o projeto em produção](https://south-frontend-challenge.vercel.app/)
 
 <h2 id="how-to-run" name="how-to-run">
