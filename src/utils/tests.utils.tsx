@@ -45,7 +45,7 @@ export const mockApiComic = (): APIComic => ({
 
 type MockApiComicsResponseParams = {
   currentOffset?: number;
-  totalOffsets?: number;
+  totalCount?: number;
   totalResults?: number;
 };
 
@@ -54,14 +54,14 @@ type MockApiComicsResponseParams = {
  */
 export const mockApiComicsResponse = ({
   currentOffset = 0,
-  totalOffsets = 10,
+  totalCount = 10,
   totalResults = 3,
 }: MockApiComicsResponseParams) => ({
   status: 200,
   data: {
     data: {
       offset: currentOffset,
-      total: totalOffsets,
+      total: totalCount,
       results: new Array(totalResults).fill(undefined).map(() => mockApiComic()), // criando um array do tamanho pedido
     },
   },
