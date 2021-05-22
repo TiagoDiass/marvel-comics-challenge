@@ -40,11 +40,25 @@ const globalStyles = createGlobalStyle`
   .react-modal-content {
     width: 100%;
     max-width: 650px;
+    max-height: 850px;
     background-color: ${({ theme }) => theme.colors.white};
     padding: 3rem;
     margin: 0.5rem;
     position: relative;
     border-radius: 0.5rem;
+
+    overflow-y: scroll;
+
+    /* Scroll */
+    &::-webkit-scrollbar {
+      
+      width: 4px;
+    }
+
+    /* Scroll Handle */
+    &::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.colors.primary};
+    }
   }
 
   .react-modal-close {
