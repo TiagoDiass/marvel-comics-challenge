@@ -42,8 +42,8 @@ describe('Home page', () => {
   it('should start with search bar empty and not loading', async () => {
     await makeSut(mockComicsListContextValue());
 
-    const searchBar = screen.getByTestId('search-bar'); // obtendo o elemento da search bar inteira
-    const searchBarInput = screen.getByRole('textbox'); // obtendo o input da search bar
+    const searchBar = screen.getByTestId('search-bar');
+    const searchBarInput = screen.getByRole('textbox');
     expect(searchBar).toHaveAttribute('data-is-loading', 'false');
     expect(searchBarInput).toHaveValue('');
   });
@@ -53,7 +53,9 @@ describe('Home page', () => {
     const mockAPIResults = mockAPIResponse.data.data.results;
 
     const comicsSection = screen.getByTestId('comics-wrapper');
-    expect(comicsSection.children).toHaveLength(mockAPIResults.length); // verificando se a lista de comics tem a exata quantidade de filhos que o mock da api retorna
+
+    // verificando se a lista de comics tem a exata quantidade de filhos que o mock da api retorna
+    expect(comicsSection.children).toHaveLength(mockAPIResults.length);
 
     const comics = screen.getAllByRole('article');
 
@@ -76,7 +78,7 @@ describe('Home page', () => {
     const comic = screen.getByRole('heading', { name: firstComicFromAPI.title }).parentElement; // obtendo o elemento do primeiro comic para fazer os asserts
     const addToListButton = comic.querySelector('a.remove-or-add-to-list');
 
-    userEvent.click(addToListButton); // clicando no botão de adicionar à lista
+    userEvent.click(addToListButton);
 
     // verificando se o addComic() foi chamado com os params esperados
     expect(mockComicsContext.addComic).toHaveBeenCalledWith(
@@ -101,7 +103,7 @@ describe('Home page', () => {
     const comic = screen.getByRole('heading', { name: firstComicFromAPI.title }).parentElement; // obtendo o elemento do primeiro comic para fazer os asserts
     const removeFromListButton = comic.querySelector('a.remove-or-add-to-list');
 
-    userEvent.click(removeFromListButton); // clicando no botão de adicionar à lista
+    userEvent.click(removeFromListButton);
 
     // verificando se o removeComic() foi chamado com os params esperados
     expect(mockComicsContext.removeComic).toHaveBeenCalledWith(
@@ -128,12 +130,11 @@ describe('Home page', () => {
 
     await makeSut(mockComicsListContextValue());
 
-    // obtendo o elemento do botão
     const loadMoreButton = screen.getByText(/carregar mais/i);
 
     expect(loadMoreButton).toBeInTheDocument();
 
-    userEvent.click(loadMoreButton); // clicando no botão de carregar mais
+    userEvent.click(loadMoreButton);
 
     await waitFor(() => screen.getByRole('heading', { name: /quadrinhos/i }));
 
@@ -145,5 +146,31 @@ describe('Home page', () => {
     });
 
     expect(loadMoreButton).not.toBeInTheDocument(); // o botão deve ter saído da DOM pois a segunda requisição não retornou nenhum quadrinho
+  });
+
+  it('should search for some comic correctly', async () => {
+    await makeSut(mockComicsListContextValue());
+    jest.spyOn(api, 'get').mockResolvedValueOnce(mockApiComicsResponse({ totalResults: 6 }));
+
+    const searchBarInput = screen.getByRole('textbox');
+    const searchBarButton = screen.getByRole('button', { name: /buscar/i });
+
+    userEvent.type(searchBarInput, 'spiderman');
+    userEvent.click(searchBarButton);
+
+    await waitFor(() => screen.getByRole('heading', { name: /quadrinhos/i })); // esperando pelo heading pra RTL não dar warnings de problemas assíncronos
+
+    // vendo se a api foi chamada com os params esperados
+    expect(api.get).toHaveBeenCalledWith('/v1/public/comics', {
+      params: {
+        limit: 12,
+        offset: 0,
+        titleStartsWith: 'spiderman',
+      },
+    });
+
+    const allComics = screen.getAllByRole('article');
+
+    expect(allComics).toHaveLength(6);
   });
 });

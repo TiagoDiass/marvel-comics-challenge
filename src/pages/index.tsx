@@ -14,6 +14,7 @@ export default function Home() {
   const [comics, setComics] = useState<Comic[]>([]);
   const [loadedAll, setLoadedAll] = useState(false); // estado que vai definir se já foi carregado todos os comics com o filtro escolhido
   const [currentPage, setCurrentPage] = useState(0);
+  const [searchQuery, setSearchQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingSearch, setIsLoadingSearch] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
@@ -91,6 +92,32 @@ export default function Home() {
     setIsLoadingMore(false);
   };
 
+  const handleSearch = async () => {
+    setCurrentPage(0);
+
+    const response = await api.get('/v1/public/comics', {
+      params: {
+        limit: 12,
+        offset: currentPage,
+        titleStartsWith: searchQuery,
+      },
+    });
+
+    setCurrentPage(currentPage => currentPage + 1);
+
+    const unformattedComics: APIComic[] = response.data.data.results;
+
+    const newComics: Comic[] = unformattedComics.map(comic => ({
+      id: comic.id,
+      title: comic.title,
+      thumbnailUrl: `${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`,
+      totalPageCount: comic.pageCount,
+      creators: comic.creators.items.map(creator => creator.name),
+    }));
+
+    setComics(newComics);
+  };
+
   return (
     <>
       <Head>
@@ -109,9 +136,12 @@ export default function Home() {
             <input
               type='text'
               aria-details='Barra de busca'
-              placeholder='Digite um quadrinho para buscar...'
+              placeholder='Digite o título de um quadrinho para buscar...'
+              onChange={event => setSearchQuery(event.target.value)}
             />
-            <button>{isLoadingSearch ? <FaSpinner /> : <AiOutlineSearch />}</button>
+            <button title='Buscar' onClick={handleSearch}>
+              {isLoadingSearch ? <FaSpinner /> : <AiOutlineSearch />}
+            </button>
           </S.SearchBar>
         </S.HomeHeading>
 
