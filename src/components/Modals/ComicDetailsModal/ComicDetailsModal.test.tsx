@@ -16,8 +16,8 @@ const makeSut = (mockModalsContextValue: IModalsContext) => {
 };
 
 describe('ComicDetailsModal modal', () => {
-  it('should render correctly', () => {
-    const comicMock = generateComic();
+  it('should render correctly with only one creator', () => {
+    const comicMock = generateComic({});
     const mockContextValue: IModalsContext = {
       ...mockModalsContextValue(),
       currentComic: comicMock,
@@ -43,11 +43,26 @@ describe('ComicDetailsModal modal', () => {
     expect(comicTotalPages).toHaveTextContent(comicMock.totalPageCount.toString());
   });
 
+  it('should render correctly with more than one creator', () => {
+    const comicMock = generateComic({ totalCreators: 3 });
+    const mockContextValue: IModalsContext = {
+      ...mockModalsContextValue(),
+      currentComic: comicMock,
+      isComicDetailsModalOpen: true,
+    };
+
+    makeSut(mockContextValue);
+
+    const comicCreators = screen.getByRole('heading', { name: /criadores/i });
+
+    expect(comicCreators).toHaveTextContent(`Criadores: ${comicMock.creators.join(', ')}`);
+  });
+
   it('should call closeComicDetailsModal() from context when user clicks on the close button', () => {
     const mockContextValue = {
       ...mockModalsContextValue(),
       isComicDetailsModalOpen: true,
-      currentComic: generateComic(),
+      currentComic: generateComic({}),
     };
 
     makeSut(mockContextValue);
@@ -57,5 +72,19 @@ describe('ComicDetailsModal modal', () => {
     userEvent.click(closeButton);
 
     expect(mockContextValue.closeComicDetailsModal).toHaveBeenCalled();
+  });
+
+  it('should render nothing if currentComic from context is null', () => {
+    const mockContextValue: IModalsContext = {
+      ...mockModalsContextValue(),
+      currentComic: null,
+      isComicDetailsModalOpen: true,
+    };
+
+    makeSut(mockContextValue);
+
+    const modalContent = screen.getByTestId('comic-details-modal');
+
+    expect(modalContent).toBeEmptyDOMElement();
   });
 });

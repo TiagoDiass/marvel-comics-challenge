@@ -14,8 +14,9 @@ export default function ComicDetailsModal() {
       overlayClassName='react-modal-overlay'
       className='react-modal-content'
       isOpen={isComicDetailsModalOpen}
-      ariaHideApp={process.env.NODE_ENV === 'test' ? false : true} // configuração pro react-modal não dar erros no console sobre não setar um elemento root durante os testes automatizados
+      ariaHideApp={process.env.NODE_ENV !== 'test'} // configuração pro react-modal não dar erros no console sobre não setar um elemento root durante os testes automatizados
       onRequestClose={closeComicDetailsModal}
+      testId='comic-details-modal'
     >
       {comic && (
         <S.ModalContentContainer>
