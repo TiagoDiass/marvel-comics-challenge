@@ -15,7 +15,8 @@
   <a href="#features">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#tests">Testes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#technologies">Tecnologias utilizadas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#how-to-run">Como rodar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#deploy">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#how-to-run">Como rodar</a>
 </p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -25,7 +26,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;![](screenshots/preview.gif)
 
 <h2 align="center">
-  <a href="https://podcastr-tiago.vercel.app/" target="_blank">
+  <a href="https://south-frontend-challenge.vercel.app/" target="_blank">
     Demo na Vercel
   </a>
 </h2>
@@ -34,7 +35,7 @@
   :clipboard: Resultado final
 </h2>
 
-### [Clique aqui para ver o projeto rodando na Vercel](https://podcastr-tiago.vercel.app)
+### [Clique aqui para ver o projeto rodando na Vercel](https://south-frontend-challenge.vercel.app/)
 
 ### Desktop preview
 <div>
@@ -122,6 +123,13 @@ Um resumo dos teste são:
 - [React Modal](https://github.com/reactjs/react-modal) - A React Modal é uma biblioteca para podermos utilizar Modais dentro de aplicações front-end com React.
 - [Sweet Alert](https://sweetalert2.github.io/) - Sweet Alert é uma biblioteca para poder mostrar mensagens de alerta e toasts. A utilizei para fazer os toasts quando o usuário adiciona ou remove um quadrinho da sua lista.
 - [Faker](https://github.com/marak/Faker.js/) - Faker é uma biblioteca para poder gerar valores aleatórios. Eu a utilizei para os testes automatizados.
+
+<h2 id="deploy" name="deploy">
+  :rocket: Deploy
+</h2>
+
+Ao fiz o deploy dessa aplicação na [Vercel](https://vercel.com/). Ela está configurada com uma integração contínua (continuous integration) com este repositório do Github, isso é, toda vez que o código do repositório no Github na branch main tiver uma atualização, a Vercel rodará o build do projeto e o colocará em produção.
+(Clique aqui para ver o projeto em produção)[https://south-frontend-challenge.vercel.app/]
 
 <h2 id="how-to-run" name="how-to-run">
   :arrow_forward: Como rodar
