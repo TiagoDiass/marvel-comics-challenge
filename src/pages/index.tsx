@@ -1,12 +1,14 @@
 import { FormEvent, useEffect, useState } from 'react';
 import Head from 'next/head';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { FaSpinner } from 'react-icons/fa';
 import { APIComic, Comic } from '@types';
+
 import api from 'services/api';
 import { Toast } from 'plugins/sweetAlert';
 import { useComicsListContext } from 'contexts/ComicsList.context';
 import { useModalsContext } from 'contexts/Modals.context';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { FaSpinner } from 'react-icons/fa';
+import convertAPIComicToComic from 'utils/convertAPIComicToComic';
 import * as S from 'styles/pages/home.styles';
 
 export default function Home() {
@@ -30,14 +32,9 @@ export default function Home() {
 
       const unformattedComics: APIComic[] = response.data.data.results;
 
-      const formattedComics: Comic[] = unformattedComics.map(comic => ({
-        id: comic.id,
-        description: comic.description || 'Sem descrição na base de dados',
-        title: comic.title,
-        thumbnailUrl: `${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`,
-        totalPageCount: comic.pageCount,
-        creators: comic.creators.items.map(creator => creator.name),
-      }));
+      const formattedComics: Comic[] = unformattedComics.map(comic =>
+        convertAPIComicToComic(comic)
+      );
 
       setIsLoading(false);
       setComics(formattedComics);
@@ -85,14 +82,7 @@ export default function Home() {
     if (responseResults.length > 0) {
       const unformattedComics: APIComic[] = responseResults;
 
-      const newComics: Comic[] = unformattedComics.map(comic => ({
-        id: comic.id,
-        title: comic.title,
-        description: comic.description || 'Sem descrição na base de dados',
-        thumbnailUrl: `${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`,
-        totalPageCount: comic.pageCount,
-        creators: comic.creators.items.map(creator => creator.name),
-      }));
+      const newComics: Comic[] = unformattedComics.map(comic => convertAPIComicToComic(comic));
 
       setComics([...comics, ...newComics]);
     } else {
@@ -120,14 +110,7 @@ export default function Home() {
 
     const unformattedComics: APIComic[] = response.data.data.results;
 
-    const newComics: Comic[] = unformattedComics.map(comic => ({
-      id: comic.id,
-      title: comic.title,
-      description: comic.description || 'Sem descrição na base de dados',
-      thumbnailUrl: `${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`,
-      totalPageCount: comic.pageCount,
-      creators: comic.creators.items.map(creator => creator.name),
-    }));
+    const newComics: Comic[] = unformattedComics.map(comic => convertAPIComicToComic(comic));
 
     setIsLoadingSearch(false);
     setComics(newComics);
