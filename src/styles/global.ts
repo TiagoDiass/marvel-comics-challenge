@@ -26,7 +26,7 @@ const globalStyles = createGlobalStyle`
     font-family: ${({ theme }) => theme.fonts.default};
   }
 
-  button {
+  button, a.button {
     font-family: ${({ theme }) => theme.fonts.default};
     text-transform: uppercase;
     font-weight: bold;
