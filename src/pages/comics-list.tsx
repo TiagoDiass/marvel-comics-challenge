@@ -3,13 +3,23 @@ import { BiMailSend } from 'react-icons/bi';
 import { MdDelete } from 'react-icons/md';
 import { IoMdEye } from 'react-icons/io';
 import { useComicsListContext } from 'contexts/ComicsList.context';
+import { Comic } from '@types';
+import { Toast } from 'plugins/sweetAlert';
 import * as S from 'styles/pages/comics-list.styles';
 
 /**
  * @page Página ComicsList
  */
 export default function ComicsList() {
-  const { comicsList } = useComicsListContext();
+  const { comicsList, removeComic } = useComicsListContext();
+
+  const handleRemoveComicFromList = (comic: Comic) => {
+    removeComic(comic);
+    Toast.fire({
+      icon: 'success',
+      title: 'Removido com sucesso',
+    });
+  };
 
   return (
     <>
@@ -51,7 +61,7 @@ export default function ComicsList() {
                       </td>
 
                       <td>
-                        <button>
+                        <button onClick={() => handleRemoveComicFromList(comic)}>
                           Remover da Lista <MdDelete size={16} />
                         </button>
 
