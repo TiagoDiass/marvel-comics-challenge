@@ -1,17 +1,11 @@
 import styled, { css } from 'styled-components';
 import { Animations } from 'styles';
 
-export const PageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const HomeContainer = styled.main`
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
   min-height: 100vh;
-  /* background-color: blue; */
   background-color: ${({ theme }) => theme.colors.white};
   padding: 1rem 8rem;
 
