@@ -5,16 +5,16 @@ export const ComicsListPageContainer = styled.main`
   flex-direction: column;
   row-gap: 1rem;
   background-color: ${({ theme }) => theme.colors.white};
-  padding: 1rem 8rem;
+  padding: 1rem;
   width: 70vw;
   margin: 0 auto;
 
-  @media (max-width: 960px) {
-    padding: 1rem 4rem;
+  @media (max-width: 1260px) {
+    width: 85vw;
   }
 
-  @media (max-width: 768px) {
-    padding: 1rem 2rem;
+  @media (max-width: 960px) {
+    width: 95vw;
   }
 `;
 
@@ -77,22 +77,23 @@ export const ComicsTable = styled.table`
 
 export const Footer = styled.footer`
   margin-top: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 1rem;
 
-  height: 2.25rem;
+  min-height: 2.25rem;
   /* background-color: red; */
 
   .input-wrapper {
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     column-gap: 0.5rem;
-    width: 50%;
 
     label {
-      width: 10%;
+      width: 20%;
       text-align: center;
       font-weight: 500;
     }
@@ -102,7 +103,7 @@ export const Footer = styled.footer`
       outline: none;
       border: 1px solid #eee;
       padding: 0 6px;
-      width: 90%;
+      width: 80%;
       border-radius: 4px;
 
       &:focus {
@@ -113,10 +114,23 @@ export const Footer = styled.footer`
 
   button {
     height: 100%;
-    width: 48%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2.5rem 2.5rem;
+    row-gap: 0.5rem;
+
+    .input-wrapper,
+    button {
+      width: 100%;
+    }
   }
 `;
