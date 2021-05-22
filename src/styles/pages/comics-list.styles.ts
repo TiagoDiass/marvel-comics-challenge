@@ -62,7 +62,6 @@ export const ComicsTable = styled.table`
     /* Primeira TD, que contém a CAPA */
     &:first-of-type {
       img {
-        /* width: 100px; */
         height: 85px;
       }
     }
@@ -92,7 +91,6 @@ export const Footer = styled.footer`
   column-gap: 1rem;
 
   min-height: 2.25rem;
-  /* background-color: red; */
 
   .input-wrapper {
     height: 100%;
