@@ -24,20 +24,21 @@ export const mockComicsListContextValue = (): IComicsListContext => ({
   comicsList: [],
 });
 
+type MockApiComicsParams = {
+  totalCreators?: number;
+};
+
 /**
  * @helper factory que retorna um mock de um comic da API
  */
-export const mockApiComic = (): APIComic => ({
+export const mockApiComic = ({ totalCreators = 1 }: MockApiComicsParams): APIComic => ({
   id: faker.datatype.number(8500),
   title: faker.random.words(5),
   description: faker.random.words(35),
   creators: {
-    items: [
-      {
-        name: faker.name.findName(),
-        role: faker.random.words(2),
-      },
-    ],
+    items: new Array(totalCreators)
+      .fill(null)
+      .map(() => ({ name: faker.name.findName(), role: faker.random.words(2) })),
   },
   pageCount: faker.datatype.number(),
   thumbnail: {
@@ -65,15 +66,20 @@ export const mockApiComicsResponse = ({
     data: {
       offset: currentOffset,
       total: totalCount,
-      results: new Array(totalResults).fill(undefined).map(() => mockApiComic()), // criando um array do tamanho pedido
+      results: new Array(totalResults).fill(null).map(() => mockApiComic({})), // criando um array do tamanho pedido
     },
   },
 });
 
+type GenerateComicParams = {
+  totalCreators?: number;
+};
+
 /**
  * @helper factory que retorna um mock do tipo Comic
  */
-export const generateComic = (): Comic => convertAPIComicToComic(mockApiComic());
+export const generateComic = (params: GenerateComicParams): Comic =>
+  convertAPIComicToComic(mockApiComic({ totalCreators: params.totalCreators }));
 
 /**
  * @helper factory que retorna um mock do valor do contexto de Modal
