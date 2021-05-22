@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import { BiMailSend } from 'react-icons/bi';
 import { MdDelete } from 'react-icons/md';
@@ -6,7 +7,9 @@ import { useComicsListContext } from 'contexts/ComicsList.context';
 import { useModalsContext } from 'contexts/Modals.context';
 import { Comic } from '@types';
 import { Toast } from 'plugins/sweetAlert';
+import { generateMailToLink, generatEmailBody } from 'utils/emails';
 import * as S from 'styles/pages/comics-list.styles';
+import generateEmailBody from 'utils/emails/generateEmailBody/generateEmailBody';
 
 /**
  * @page Página ComicsList
@@ -14,6 +17,7 @@ import * as S from 'styles/pages/comics-list.styles';
 export default function ComicsList() {
   const { openComicDetailsModal } = useModalsContext();
   const { comicsList, removeComic } = useComicsListContext();
+  const [email, setEmail] = useState('');
 
   const handleRemoveComicFromList = (comic: Comic) => {
     removeComic(comic);
@@ -86,9 +90,17 @@ export default function ComicsList() {
                   />
                 </div>
 
-                <button>
+                <a
+                  target='_blank'
+                  href={generateMailToLink({
+                    to: email,
+                    subject: 'Quadrinhos da Marvel',
+                    body: encodeURI(generateEmailBody(comicsList)),
+                  })}
+                  className='button'
+                >
                   Enviar <BiMailSend size={20} />
-                </button>
+                </a>
               </S.Footer>
             </>
           ) : (

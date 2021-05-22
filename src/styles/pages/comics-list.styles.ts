@@ -121,7 +121,9 @@ export const Footer = styled.footer`
     }
   }
 
-  button {
+  a {
+    text-decoration: none;
+    font-size: 0.9rem;
     height: 100%;
     width: 100%;
     display: flex;
@@ -131,15 +133,8 @@ export const Footer = styled.footer`
   }
 
   @media (max-width: 768px) {
-    /* border: 1px solid red; */
-    display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 2.5rem 2.5rem;
     row-gap: 0.5rem;
-
-    .input-wrapper,
-    button {
-      width: 100%;
-    }
   }
 `;
