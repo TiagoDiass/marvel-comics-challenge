@@ -2,6 +2,9 @@ import Modal from 'react-modal';
 import { useModalsContext } from 'contexts/Modals.context';
 import * as S from './ComicDetailsModal.styles';
 
+/**
+ * @component Modal de detalhes de um quadrinho / comic
+ */
 export default function ComicDetailsModal() {
   const {
     isComicDetailsModalOpen,
