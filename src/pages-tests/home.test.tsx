@@ -115,7 +115,7 @@ describe('Home page', () => {
     });
   });
 
-  it('should pass', async () => {
+  it('should remove the load more button if all comics were loaded', async () => {
     // mockando api.get para retornar 12 resultados, e após isso retornar 0 na próxima request, o que fará que o botão de carregar mais será oculto após fazer a segunda request
     jest
       .spyOn(api, 'get')

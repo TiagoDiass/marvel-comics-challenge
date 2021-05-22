@@ -22,9 +22,9 @@ export default function Home() {
     async function fetchComics() {
       // buscando dados da API, tipando o retorno deles para depois transformá-los para o formato que o componente espera
       setIsLoading(true);
-      // const response = await api.get('/v1/public/comics', { params: { limit: 12 } });
+      const response = await api.get('/v1/public/comics', { params: { limit: 12 } });
 
-      const response = { data: mock.response };
+      // const response = { data: mock.response };
 
       const unformattedComics: APIComic[] = response.data.data.results;
 
