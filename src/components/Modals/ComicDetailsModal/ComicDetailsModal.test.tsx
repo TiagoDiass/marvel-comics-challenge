@@ -10,9 +10,7 @@ import userEvent from '@testing-library/user-event';
 const makeSut = (mockModalsContextValue: IModalsContext) => {
   renderWithTheme(
     <ModalsContext.Provider value={mockModalsContextValue}>
-      <body id='__next'>
-        <ComicDetailsModal />
-      </body>
+      <ComicDetailsModal />
     </ModalsContext.Provider>
   );
 };
