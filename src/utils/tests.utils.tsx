@@ -28,6 +28,7 @@ export const mockComicsListContextValue = (): IComicsListContext => ({
 export const mockApiComic = (): APIComic => ({
   id: faker.datatype.number(8500),
   title: faker.random.words(5),
+  description: faker.random.words(35),
   creators: {
     items: [
       {
