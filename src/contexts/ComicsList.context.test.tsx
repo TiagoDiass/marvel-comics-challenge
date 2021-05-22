@@ -92,4 +92,46 @@ describe('ComicsListContext context', () => {
     expect(getComicsListAmountElement()).toHaveTextContent('amount of comics: 1');
     expect(getComicsListElement().children).toHaveLength(1);
   });
+
+  it('should remove a comic correctly', () => {
+    const comicToBeAdded = generateComic({});
+
+    render(
+      <ComicsListContextProvider>
+        <ComicsListContext.Consumer>
+          {contextValue => (
+            <>
+              <button onClick={() => contextValue.addComic(comicToBeAdded)}>Adicionar comic</button>
+              <button onClick={() => contextValue.removeComic(comicToBeAdded)}>
+                Remover comic
+              </button>
+              <span data-testid='amount'>
+                quantidade de comics: {contextValue.comicsList.length}
+              </span>
+              <ul>
+                {contextValue.comicsList.map(comic => (
+                  <li key={comic.id}>{comic.id}</li>
+                ))}
+              </ul>
+            </>
+          )}
+        </ComicsListContext.Consumer>
+      </ComicsListContextProvider>
+    );
+
+    const getComicsListAmountElement = () => screen.getByTestId('amount');
+    const getComicsListElement = () => screen.getByRole('list');
+    const addComicButton = screen.getByRole('button', { name: /adicionar comic/i });
+    const removeComicButton = screen.getByRole('button', { name: /remover comic/i });
+
+    userEvent.click(addComicButton);
+
+    expect(getComicsListAmountElement()).toHaveTextContent('quantidade de comics: 1');
+    expect(getComicsListElement().children).toHaveLength(1);
+
+    userEvent.click(removeComicButton);
+
+    expect(getComicsListAmountElement()).toHaveTextContent('quantidade de comics: 0');
+    expect(getComicsListElement().children).toHaveLength(0);
+  });
 });
