@@ -1,6 +1,10 @@
 import sweetAlert from 'sweetalert2';
 
 const swal = sweetAlert;
+
+/**
+ * @plugin Toast do Sweet Alert com configurações base
+ */
 const Toast = swal.mixin({
   toast: true,
   position: 'top-end',
