@@ -18,7 +18,12 @@ export default function ComicDetailsModal() {
     >
       {comic && (
         <S.ModalContentContainer>
-          <button type='button' onClick={closeComicDetailsModal} className='react-modal-close'>
+          <button
+            title='Fechar modal de detalhes'
+            type='button'
+            onClick={closeComicDetailsModal}
+            className='react-modal-close'
+          >
             <img src='/images/close.svg' alt='Fechar modal de detalhes' />
           </button>
 

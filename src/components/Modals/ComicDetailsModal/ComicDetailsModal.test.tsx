@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
-import Modal from 'react-modal';
 import { IModalsContext, ModalsContext } from 'contexts/Modals.context';
 import { generateComic, mockModalsContextValue, renderWithTheme } from 'utils/tests.utils';
 import ComicDetailsModal from './ComicDetailsModal';
+import userEvent from '@testing-library/user-event';
 
 /**
  * @factory fabrica o S.U.T (system under test), que neste caso é o modal de detalhes de um quadrinho
@@ -43,5 +43,21 @@ describe('ComicDetailsModal modal', () => {
     expect(comicDescription).toHaveTextContent(comicMock.description);
     expect(comicCreator).toHaveTextContent(comicMock.creators[0]);
     expect(comicTotalPages).toHaveTextContent(comicMock.totalPageCount.toString());
+  });
+
+  it('should call closeComicDetailsModal() from context when user clicks on the close button', () => {
+    const mockContextValue = {
+      ...mockModalsContextValue(),
+      isComicDetailsModalOpen: true,
+      currentComic: generateComic(),
+    };
+
+    makeSut(mockContextValue);
+
+    const closeButton = screen.getByRole('button', { name: /fechar modal de detalhes/i });
+
+    userEvent.click(closeButton);
+
+    expect(mockContextValue.closeComicDetailsModal).toHaveBeenCalled();
   });
 });
