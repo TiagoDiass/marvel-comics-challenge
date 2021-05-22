@@ -3,6 +3,7 @@ import { BiMailSend } from 'react-icons/bi';
 import { MdDelete } from 'react-icons/md';
 import { IoMdEye } from 'react-icons/io';
 import { useComicsListContext } from 'contexts/ComicsList.context';
+import { useModalsContext } from 'contexts/Modals.context';
 import { Comic } from '@types';
 import { Toast } from 'plugins/sweetAlert';
 import * as S from 'styles/pages/comics-list.styles';
@@ -11,6 +12,7 @@ import * as S from 'styles/pages/comics-list.styles';
  * @page Página ComicsList
  */
 export default function ComicsList() {
+  const { openComicDetailsModal } = useModalsContext();
   const { comicsList, removeComic } = useComicsListContext();
 
   const handleRemoveComicFromList = (comic: Comic) => {
@@ -65,7 +67,7 @@ export default function ComicsList() {
                           Remover da Lista <MdDelete size={16} />
                         </button>
 
-                        <button>
+                        <button onClick={() => openComicDetailsModal(comic)}>
                           Detalhes <IoMdEye size={16} />
                         </button>
                       </td>

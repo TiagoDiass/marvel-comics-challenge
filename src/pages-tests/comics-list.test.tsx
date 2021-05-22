@@ -82,7 +82,7 @@ describe('ComicsList page', () => {
     );
   });
 
-  it('should call removeComic() from context and toast.fire() when user clicks on remove button', async () => {
+  it('should call removeComic() from comic list context and toast.fire() when user clicks on remove button', async () => {
     const mockComicsContextValue: IComicsListContext = {
       ...mockComicsListContextValue(),
       comicsList: [generateComic({}), generateComic({}), generateComic({})],
@@ -103,5 +103,27 @@ describe('ComicsList page', () => {
     );
 
     expect(Toast.fire).toHaveBeenCalledWith({ icon: 'success', title: 'Removido com sucesso' });
+  });
+
+  it('should call openComicDetailsModal() from modal context when user clicks on details button', async () => {
+    const mockComicsListContext = {
+      ...mockComicsListContextValue(),
+      comicsList: [generateComic({}), generateComic({}), generateComic({})],
+    };
+    const mockModalsContext: IModalsContext = mockModalsContextValue();
+
+    await makeSut(mockComicsListContext, mockModalsContext);
+
+    // pegando o primeiro comic item na table
+    const firstComicTableItem = screen.getByRole('table').querySelector('tbody tr');
+    const comicDetailsButton = firstComicTableItem.querySelectorAll('button')[1];
+
+    expect(comicDetailsButton).toHaveTextContent(/detalhes/i);
+
+    userEvent.click(comicDetailsButton);
+
+    expect(mockModalsContext.openComicDetailsModal).toHaveBeenCalledWith(
+      mockComicsListContext.comicsList[0]
+    );
   });
 });
