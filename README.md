@@ -129,7 +129,7 @@ Um resumo dos teste são:
 </h2>
 
 Ao fiz o deploy dessa aplicação na [Vercel](https://vercel.com/). Ela está configurada com uma integração contínua (continuous integration) com este repositório do Github, isso é, toda vez que o código do repositório no Github na branch main tiver uma atualização, a Vercel rodará o build do projeto e o colocará em produção.
-(Clique aqui para ver o projeto em produção)[https://south-frontend-challenge.vercel.app/]
+[Clique aqui para ver o projeto em produção](https://south-frontend-challenge.vercel.app/)
 
 <h2 id="how-to-run" name="how-to-run">
   :arrow_forward: Como rodar
