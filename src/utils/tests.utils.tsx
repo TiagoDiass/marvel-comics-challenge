@@ -5,6 +5,7 @@ import { render, RenderResult } from '@testing-library/react';
 import { IComicsListContext } from 'contexts/ComicsList.context';
 import { APIComic, Comic } from '@types';
 import convertAPIComicToComic from './convertAPIComicToComic';
+import { IModalsContext } from 'contexts/Modals.context';
 
 /**
  * @helper renderiza o componente com o tema utilizado pelo ThemeProvider do styled-components
@@ -73,3 +74,13 @@ export const mockApiComicsResponse = ({
  * @helper factory que retorna um mock do tipo Comic
  */
 export const generateComic = (): Comic => convertAPIComicToComic(mockApiComic());
+
+/**
+ * @helper factory que retorna um mock do valor do contexto de Modal
+ */
+export const mockModalsContextValue = (): IModalsContext => ({
+  openComicDetailsModal: jest.fn(),
+  closeComicDetailsModal: jest.fn(),
+  currentComic: null,
+  isComicDetailsModalOpen: false,
+});
