@@ -122,10 +122,10 @@ describe('Home page', () => {
     jest
       .spyOn(api, 'get')
       .mockResolvedValueOnce(
-        mockApiComicsResponse({ currentOffset: 0, totalOffsets: 1, totalResults: 12 })
+        mockApiComicsResponse({ currentOffset: 0, totalCount: 1, totalResults: 12 })
       )
       .mockResolvedValueOnce(
-        mockApiComicsResponse({ currentOffset: 1, totalOffsets: 1, totalResults: 0 })
+        mockApiComicsResponse({ currentOffset: 12, totalCount: 1, totalResults: 0 })
       );
 
     await makeSut(mockComicsListContextValue());
@@ -141,7 +141,7 @@ describe('Home page', () => {
     expect(api.get).toHaveBeenCalledWith('/v1/public/comics', {
       params: {
         limit: 12,
-        offset: 1,
+        offset: 12,
       },
     });
 
@@ -180,15 +180,15 @@ describe('Home page', () => {
       .mockResolvedValueOnce(mockApiComicsResponse({ totalResults: 6 })) // requisição inicial da página
       .mockResolvedValueOnce(
         // primeira requisição com a search query
-        mockApiComicsResponse({ currentOffset: 0, totalOffsets: 2, totalResults: 4 })
+        mockApiComicsResponse({ currentOffset: 0, totalCount: 24, totalResults: 12 })
       )
       .mockResolvedValueOnce(
         // requisição de load more com a search query
-        mockApiComicsResponse({ currentOffset: 1, totalOffsets: 2, totalResults: 3 })
+        mockApiComicsResponse({ currentOffset: 12, totalCount: 24, totalResults: 12 })
       )
       .mockResolvedValueOnce(
         // última requisição de load more com a search query, não vai retornar nenhum comic
-        mockApiComicsResponse({ currentOffset: 2, totalOffsets: 2, totalResults: 0 })
+        mockApiComicsResponse({ currentOffset: 24, totalCount: 24, totalResults: 0 })
       );
 
     await makeSut(mockComicsListContextValue());
@@ -207,7 +207,7 @@ describe('Home page', () => {
     await waitFor(() => screen.getByRole('heading', { name: /quadrinhos/i })); // esperando pelo heading pra RTL não dar warnings de problemas assíncronos
 
     // primeira requisição de search
-    expect(getAllComicsElement()).toHaveLength(4);
+    expect(getAllComicsElement()).toHaveLength(12);
 
     // segunda requisição de search, deve somar os 4 que já tinha mais os novos 3
     expect(loadMoreButton).toBeInTheDocument();
@@ -215,11 +215,11 @@ describe('Home page', () => {
 
     await waitFor(() => screen.getByRole('heading', { name: /quadrinhos/i })); // esperando pelo heading pra RTL não dar warnings de problemas assíncronos
 
-    expect(getAllComicsElement()).toHaveLength(7);
+    expect(getAllComicsElement()).toHaveLength(24);
     expect(api.get).toHaveBeenLastCalledWith('/v1/public/comics', {
       params: {
         limit: 12,
-        offset: 1,
+        offset: 12,
         titleStartsWith: 'spiderman',
       },
     });
@@ -234,7 +234,7 @@ describe('Home page', () => {
     expect(api.get).toHaveBeenLastCalledWith('/v1/public/comics', {
       params: {
         limit: 12,
-        offset: 2,
+        offset: 24,
         titleStartsWith: 'spiderman',
       },
     });

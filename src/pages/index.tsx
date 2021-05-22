@@ -1,5 +1,5 @@
 import mock from '../../mock.json';
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import Head from 'next/head';
 import { APIComic, Comic } from '@types';
 import api from 'services/api';
@@ -13,7 +13,7 @@ export default function Home() {
   const { addComic, removeComic, isComicAlreadyInList } = useComicsListContext();
   const [comics, setComics] = useState<Comic[]>([]);
   const [loadedAll, setLoadedAll] = useState(false); // estado que vai definir se já foi carregado todos os comics com o filtro escolhido
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingSearch, setIsLoadingSearch] = useState(false);
@@ -65,7 +65,7 @@ export default function Home() {
 
     let requestParams: any = {
       limit: 12,
-      offset: currentPage + 1,
+      offset: currentPage * 12,
     };
 
     if (searchQuery) {
@@ -99,16 +99,21 @@ export default function Home() {
     setIsLoadingMore(false);
   };
 
-  const handleSearch = async () => {
-    setCurrentPage(0);
+  const handleSearch = async (event: FormEvent) => {
+    event.preventDefault();
+
+    setLoadedAll(false);
+    setIsLoadingSearch(true);
 
     const response = await api.get('/v1/public/comics', {
       params: {
         limit: 12,
-        offset: currentPage,
+        offset: 0,
         titleStartsWith: searchQuery,
       },
     });
+
+    setCurrentPage(1);
 
     const unformattedComics: APIComic[] = response.data.data.results;
 
@@ -120,6 +125,7 @@ export default function Home() {
       creators: comic.creators.items.map(creator => creator.name),
     }));
 
+    setIsLoadingSearch(false);
     setComics(newComics);
   };
 
@@ -137,6 +143,7 @@ export default function Home() {
             data-testid='search-bar'
             isLoading={isLoadingSearch}
             data-is-loading={isLoadingSearch}
+            onSubmit={handleSearch}
           >
             <input
               type='text'
@@ -144,7 +151,7 @@ export default function Home() {
               placeholder='Digite o título de um quadrinho para buscar...'
               onChange={event => setSearchQuery(event.target.value)}
             />
-            <button title='Buscar' onClick={handleSearch}>
+            <button title='Buscar' type='submit'>
               {isLoadingSearch ? <FaSpinner /> : <AiOutlineSearch />}
             </button>
           </S.SearchBar>
