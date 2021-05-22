@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Animations } from 'styles';
 
 export const ComicsListPageContainer = styled.main`
   display: flex;
@@ -23,6 +24,8 @@ export const ContentContainer = styled.div`
   border-radius: 0.4rem;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.15);
   background-color: ${({ theme }) => theme.colors.whiteDarker};
+
+  animation: ${Animations.fadeFromLeft} 1s ease;
 `;
 
 export const ComicsTable = styled.table`
