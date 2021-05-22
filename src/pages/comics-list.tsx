@@ -81,7 +81,7 @@ export default function ComicsList() {
             </>
           ) : (
             <h2 style={{ textAlign: 'center' }}>
-              Ops... <br /> Parece que você ainda não adicionou nenhum quadrinho
+              Ops... <br /> Parece que você ainda não adicionou nenhum quadrinho em sua lista
             </h2>
           )}
         </S.ContentContainer>

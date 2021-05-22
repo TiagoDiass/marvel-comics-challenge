@@ -1,5 +1,5 @@
 import ComicsListPage from 'pages/comics-list';
-import { screen, waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ComicsListContext, IComicsListContext } from 'contexts/ComicsList.context';
 import {
@@ -13,7 +13,7 @@ import { IModalsContext, ModalsContext } from 'contexts/Modals.context';
 /**
  * @factory fabrica o S.U.T (system under test), que neste caso, é o componente/página ComicsList
  */
-const makeSut = async (
+const makeSut = (
   comicsListContextValue: IComicsListContext,
   modalsContextValue: IModalsContext
 ) => {
@@ -24,9 +24,6 @@ const makeSut = async (
       </ModalsContext.Provider>
     </ComicsListContext.Provider>
   );
-
-  // esperando até achar o heading pra poder fazer os asserts, padrão da RTL para aguardar ações assíncronas. Se não usar isso a RTL dá alguns warnings no terminal
-  await waitFor(() => screen.getByRole('heading', { name: /sua lista de quadrinhos/i }));
 };
 
 describe('ComicsList page', () => {
@@ -62,5 +59,20 @@ describe('ComicsList page', () => {
       // coluna dos botões
       expect(itemColumns[3].querySelectorAll('button')).toHaveLength(2);
     });
+  });
+
+  it('should render correctly if there is no comics in the list', () => {
+    const mockComicsContextValue: IComicsListContext = {
+      ...mockComicsListContextValue(),
+      comicsList: [],
+    };
+
+    makeSut(mockComicsContextValue, mockModalsContextValue());
+
+    const noComicsInTheListHeading = screen.getByRole('heading', { name: /ops/i });
+
+    expect(noComicsInTheListHeading).toHaveTextContent(
+      'Ops... Parece que você ainda não adicionou nenhum quadrinho em sua lista'
+    );
   });
 });
