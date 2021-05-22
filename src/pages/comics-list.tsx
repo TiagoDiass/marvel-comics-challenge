@@ -5,6 +5,9 @@ import * as S from 'styles/pages/comics-list.styles';
 import convertAPIComicToComic from 'utils/convertAPIComicToComic';
 import mock from '../../mock.json';
 
+/**
+ * @page Página ComicsList
+ */
 export default function ComicsList() {
   const comicsList = [
     convertAPIComicToComic(mock.results[0]),
