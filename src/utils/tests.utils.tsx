@@ -26,7 +26,7 @@ export const mockComicsListContextValue = (): IComicsListContext => ({
  * @helper factory que retorna um mock de um comic da API
  */
 export const mockApiComic = (): APIComic => ({
-  id: faker.datatype.number(5000),
+  id: faker.datatype.number(8500),
   title: faker.random.words(5),
   creators: {
     items: [
