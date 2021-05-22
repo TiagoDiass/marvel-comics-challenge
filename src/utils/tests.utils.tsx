@@ -3,7 +3,8 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
 import { render, RenderResult } from '@testing-library/react';
 import { IComicsListContext } from 'contexts/ComicsList.context';
-import { APIComic } from '@types';
+import { APIComic, Comic } from '@types';
+import convertAPIComicToComic from './convertAPIComicToComic';
 
 /**
  * @helper renderiza o componente com o tema utilizado pelo ThemeProvider do styled-components
@@ -67,3 +68,8 @@ export const mockApiComicsResponse = ({
     },
   },
 });
+
+/**
+ * @helper factory que retorna um mock do tipo Comic
+ */
+export const generateComic = (): Comic => convertAPIComicToComic(mockApiComic());
