@@ -9,14 +9,14 @@ describe('ComicsListContext context', () => {
       <ComicsListContextProvider>
         <ComicsListContext.Consumer>
           {contextValue => (
-            <span data-testid='amount'>amount of comics: {contextValue.comicsList.length}</span>
+            <span data-testid='amount'>quantidade de comics: {contextValue.comicsList.length}</span>
           )}
         </ComicsListContext.Consumer>
       </ComicsListContextProvider>
     );
 
     const amountOfComicsElement = screen.getByTestId('amount');
-    expect(amountOfComicsElement).toHaveTextContent('amount of comics: 0');
+    expect(amountOfComicsElement).toHaveTextContent('quantidade de comics: 0');
   });
 
   it('should add a comic correctly', () => {
@@ -28,7 +28,9 @@ describe('ComicsListContext context', () => {
           {contextValue => (
             <>
               <button onClick={() => contextValue.addComic(comicToBeAdded)}>Adicionar comic</button>
-              <span data-testid='amount'>amount of comics: {contextValue.comicsList.length}</span>
+              <span data-testid='amount'>
+                quantidade de comics: {contextValue.comicsList.length}
+              </span>
               <ul>
                 {contextValue.comicsList.map(comic => (
                   <li key={comic.id}>{comic.id}</li>
@@ -43,14 +45,14 @@ describe('ComicsListContext context', () => {
     const getComicsListAmountElement = () => screen.getByTestId('amount');
     const getComicsListElement = () => screen.getByRole('list');
 
-    expect(getComicsListAmountElement()).toHaveTextContent('amount of comics: 0');
+    expect(getComicsListAmountElement()).toHaveTextContent('quantidade de comics: 0');
     expect(getComicsListElement().children).toHaveLength(0);
 
     const addComicButton = screen.getByRole('button', { name: /adicionar comic/i });
 
     userEvent.click(addComicButton);
 
-    expect(getComicsListAmountElement()).toHaveTextContent('amount of comics: 1');
+    expect(getComicsListAmountElement()).toHaveTextContent('quantidade de comics: 1');
     expect(getComicsListElement().children).toHaveLength(1);
   });
 
@@ -63,7 +65,9 @@ describe('ComicsListContext context', () => {
           {contextValue => (
             <>
               <button onClick={() => contextValue.addComic(comicToBeAdded)}>Adicionar comic</button>
-              <span data-testid='amount'>amount of comics: {contextValue.comicsList.length}</span>
+              <span data-testid='amount'>
+                quantidade de comics: {contextValue.comicsList.length}
+              </span>
               <ul>
                 {contextValue.comicsList.map(comic => (
                   <li key={comic.id}>{comic.id}</li>
@@ -79,17 +83,17 @@ describe('ComicsListContext context', () => {
     const getComicsListElement = () => screen.getByRole('list');
     const addComicButton = screen.getByRole('button', { name: /adicionar comic/i });
 
-    expect(getComicsListAmountElement()).toHaveTextContent('amount of comics: 0');
+    expect(getComicsListAmountElement()).toHaveTextContent('quantidade de comics: 0');
     expect(getComicsListElement().children).toHaveLength(0);
 
     userEvent.click(addComicButton); // adicionando o comic
 
-    expect(getComicsListAmountElement()).toHaveTextContent('amount of comics: 1');
+    expect(getComicsListAmountElement()).toHaveTextContent('quantidade de comics: 1');
     expect(getComicsListElement().children).toHaveLength(1);
 
     userEvent.click(addComicButton); // adicionando o comic denovo, como é o mesmo comic, o tamanho ainda deve ser 1
 
-    expect(getComicsListAmountElement()).toHaveTextContent('amount of comics: 1');
+    expect(getComicsListAmountElement()).toHaveTextContent('quantidade de comics: 1');
     expect(getComicsListElement().children).toHaveLength(1);
   });
 
