@@ -15,6 +15,7 @@ export type APIComic = {
 export type Comic = {
   id: number;
   title: string;
+  description: string;
   thumbnailUrl: string;
   totalPageCount: number;
   creators: string[];

@@ -22,8 +22,16 @@ export default function ComicDetailsModal() {
             <img src='/images/close.svg' alt='Fechar modal de detalhes' />
           </button>
 
-          <h2>Detalhes do Quadrinho</h2>
-          <h3>Título: {comic.title}</h3>
+          <div className='details'>
+            <h2>Detalhes do Quadrinho</h2>
+            <img src={comic.thumbnailUrl} alt={comic.title} />
+            <h3>Título: {comic.title}</h3>
+            <h3>Descrição: {comic.description}</h3>
+            <h3>
+              {comic.creators.length === 1 ? 'Criador' : 'Criadores'}: {comic.creators.join(', ')}
+            </h3>
+            <h3>Total de páginas: {comic.totalPageCount}</h3>
+          </div>
         </S.ModalContentContainer>
       )}
     </Modal>

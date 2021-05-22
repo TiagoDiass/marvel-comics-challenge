@@ -32,6 +32,7 @@ export default function Home() {
 
       const formattedComics: Comic[] = unformattedComics.map(comic => ({
         id: comic.id,
+        description: comic.description || 'Sem descrição na base de dados',
         title: comic.title,
         thumbnailUrl: `${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`,
         totalPageCount: comic.pageCount,
@@ -87,6 +88,7 @@ export default function Home() {
       const newComics: Comic[] = unformattedComics.map(comic => ({
         id: comic.id,
         title: comic.title,
+        description: comic.description || 'Sem descrição na base de dados',
         thumbnailUrl: `${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`,
         totalPageCount: comic.pageCount,
         creators: comic.creators.items.map(creator => creator.name),
@@ -121,6 +123,7 @@ export default function Home() {
     const newComics: Comic[] = unformattedComics.map(comic => ({
       id: comic.id,
       title: comic.title,
+      description: comic.description || 'Sem descrição na base de dados',
       thumbnailUrl: `${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`,
       totalPageCount: comic.pageCount,
       creators: comic.creators.items.map(creator => creator.name),
