@@ -24,6 +24,7 @@ export const Logo = styled.h1`
     color: ${theme.colors.whiteDarker};
     font-family: ${theme.fonts.heading};
     font-weight: 300;
+    cursor: pointer;
 
     span {
       color: ${theme.colors.white};
