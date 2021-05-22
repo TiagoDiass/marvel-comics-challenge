@@ -22,8 +22,8 @@ export default function ComicDetailsModal() {
             <img src='/images/close.svg' alt='Fechar modal de detalhes' />
           </button>
 
-          <h1>Detalhes do quadrinho</h1>
-          <h2>título: {comic.title}</h2>
+          <h2>Detalhes do Quadrinho</h2>
+          <h3>Título: {comic.title}</h3>
         </S.ModalContentContainer>
       )}
     </Modal>

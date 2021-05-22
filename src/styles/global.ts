@@ -39,9 +39,10 @@ const globalStyles = createGlobalStyle`
 
   .react-modal-content {
     width: 100%;
-    max-width: 625px;
+    max-width: 650px;
     background-color: ${({ theme }) => theme.colors.white};
     padding: 3rem;
+    margin: 0.5rem;
     position: relative;
     border-radius: 0.5rem;
   }
