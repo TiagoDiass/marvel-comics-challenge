@@ -11,6 +11,9 @@ import { useModalsContext } from 'contexts/Modals.context';
 import convertAPIComicToComic from 'utils/convertAPIComicToComic';
 import * as S from 'styles/pages/home.styles';
 
+/**
+ * @page Página Home
+ */
 export default function Home() {
   const { openComicDetailsModal } = useModalsContext();
   const { addComic, removeComic, isComicAlreadyInList } = useComicsListContext();
