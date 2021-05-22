@@ -151,7 +151,7 @@ export default function Home() {
               placeholder='Digite o título de um quadrinho para buscar...'
               onChange={event => setSearchQuery(event.target.value)}
             />
-            <button title='Buscar' type='submit'>
+            <button title='Buscar' type='submit' disabled={!searchQuery}>
               {isLoadingSearch ? <FaSpinner /> : <AiOutlineSearch />}
             </button>
           </S.SearchBar>

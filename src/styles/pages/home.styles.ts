@@ -74,6 +74,10 @@ export const SearchBar = styled.form<{ isLoading: boolean }>`
       justify-content: center;
       border-radius: 0 0.3rem 0.3rem 0;
 
+      &:disabled {
+        opacity: 0.7;
+      }
+
       svg {
         color: ${theme.colors.white};
         transition: all 0.2s ease;
@@ -84,7 +88,7 @@ export const SearchBar = styled.form<{ isLoading: boolean }>`
           : 'none'};
       }
 
-      &:hover {
+      &:hover:not(:disabled) {
         filter: brightness(0.95);
         cursor: ${isLoading ? 'initial' : 'pointer'};
 

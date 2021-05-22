@@ -39,13 +39,16 @@ describe('Home page', () => {
     });
   });
 
-  it('should start with search bar empty and not loading', async () => {
+  it('should start with search bar empty, not loading, and button disabled', async () => {
     await makeSut(mockComicsListContextValue());
 
     const searchBar = screen.getByTestId('search-bar');
     const searchBarInput = screen.getByRole('textbox');
+    const searchBarButton = screen.getByRole('button', { name: /buscar/i });
+
     expect(searchBar).toHaveAttribute('data-is-loading', 'false');
     expect(searchBarInput).toHaveValue('');
+    expect(searchBarButton).toBeDisabled();
   });
 
   it('should render comics correctly', async () => {
