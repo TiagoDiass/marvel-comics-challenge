@@ -62,11 +62,18 @@ export default function Home() {
 
   const handleLoadMore = async () => {
     setIsLoadingMore(true);
+
+    let requestParams: any = {
+      limit: 12,
+      offset: currentPage + 1,
+    };
+
+    if (searchQuery) {
+      requestParams.titleStartsWith = searchQuery;
+    }
+
     const response = await api.get('/v1/public/comics', {
-      params: {
-        limit: 12,
-        offset: currentPage + 1,
-      },
+      params: requestParams,
     });
 
     setCurrentPage(currentPage => currentPage + 1);
@@ -102,8 +109,6 @@ export default function Home() {
         titleStartsWith: searchQuery,
       },
     });
-
-    setCurrentPage(currentPage => currentPage + 1);
 
     const unformattedComics: APIComic[] = response.data.data.results;
 

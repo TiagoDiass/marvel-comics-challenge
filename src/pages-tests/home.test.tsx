@@ -117,7 +117,7 @@ describe('Home page', () => {
     });
   });
 
-  it('should remove the load more button if all comics were loaded', async () => {
+  it('should load more comics correctly', async () => {
     // mockando api.get para retornar 12 resultados, e após isso retornar 0 na próxima request, o que fará que o botão de carregar mais será oculto após fazer a segunda request
     jest
       .spyOn(api, 'get')
@@ -172,5 +172,71 @@ describe('Home page', () => {
     const allComics = screen.getAllByRole('article');
 
     expect(allComics).toHaveLength(6);
+  });
+
+  it('should load more with a search query correctly', async () => {
+    jest
+      .spyOn(api, 'get')
+      .mockResolvedValueOnce(mockApiComicsResponse({ totalResults: 6 })) // requisição inicial da página
+      .mockResolvedValueOnce(
+        // primeira requisição com a search query
+        mockApiComicsResponse({ currentOffset: 0, totalOffsets: 2, totalResults: 4 })
+      )
+      .mockResolvedValueOnce(
+        // requisição de load more com a search query
+        mockApiComicsResponse({ currentOffset: 1, totalOffsets: 2, totalResults: 3 })
+      )
+      .mockResolvedValueOnce(
+        // última requisição de load more com a search query, não vai retornar nenhum comic
+        mockApiComicsResponse({ currentOffset: 2, totalOffsets: 2, totalResults: 0 })
+      );
+
+    await makeSut(mockComicsListContextValue());
+
+    const getAllComicsElement = () => screen.getAllByRole('article');
+
+    expect(getAllComicsElement()).toHaveLength(6);
+
+    const searchBarInput = screen.getByRole('textbox');
+    const searchBarButton = screen.getByRole('button', { name: /buscar/i });
+    const loadMoreButton = screen.getByRole('button', { name: /carregar mais/i });
+
+    userEvent.type(searchBarInput, 'spiderman');
+    userEvent.click(searchBarButton);
+
+    await waitFor(() => screen.getByRole('heading', { name: /quadrinhos/i })); // esperando pelo heading pra RTL não dar warnings de problemas assíncronos
+
+    // primeira requisição de search
+    expect(getAllComicsElement()).toHaveLength(4);
+
+    // segunda requisição de search, deve somar os 4 que já tinha mais os novos 3
+    expect(loadMoreButton).toBeInTheDocument();
+    userEvent.click(loadMoreButton);
+
+    await waitFor(() => screen.getByRole('heading', { name: /quadrinhos/i })); // esperando pelo heading pra RTL não dar warnings de problemas assíncronos
+
+    expect(getAllComicsElement()).toHaveLength(7);
+    expect(api.get).toHaveBeenLastCalledWith('/v1/public/comics', {
+      params: {
+        limit: 12,
+        offset: 1,
+        titleStartsWith: 'spiderman',
+      },
+    });
+
+    // terceira e última requisição de search, após essa o botão de carregar mais deve sumir
+    expect(loadMoreButton).toBeInTheDocument();
+    userEvent.click(loadMoreButton);
+
+    await waitFor(() => screen.getByRole('heading', { name: /quadrinhos/i })); // esperando pelo heading pra RTL não dar warnings de problemas assíncronos
+
+    expect(loadMoreButton).not.toBeInTheDocument();
+    expect(api.get).toHaveBeenLastCalledWith('/v1/public/comics', {
+      params: {
+        limit: 12,
+        offset: 2,
+        titleStartsWith: 'spiderman',
+      },
+    });
   });
 });
