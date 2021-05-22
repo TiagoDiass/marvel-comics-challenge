@@ -1,6 +1,9 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
+/**
+ * @component Document - Documento para tratar coisas que vão ficar em todas as páginas, como meta tags e afins
+ */
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     // configuração para utilizar styled-components no Next.js

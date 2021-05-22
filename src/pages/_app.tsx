@@ -9,6 +9,9 @@ import { ModalsContextProvider } from 'contexts/Modals.context';
 // configurando o root element para o react-modal
 Modal.setAppElement('#__next');
 
+/**
+ * @component App - componente raiz do Next.js
+ */
 export default function App({ Component, pageProps }) {
   return (
     <>
