@@ -2,6 +2,9 @@ import * as S from './Header.styles';
 import { AiOutlineUnorderedList } from 'react-icons/ai';
 import { useComicsListContext } from 'contexts/ComicsList.context';
 
+/**
+ * @component Header / Cabeçalho
+ */
 export default function Header() {
   const { getTotalComics } = useComicsListContext();
   const totalComics = getTotalComics();
@@ -25,7 +28,6 @@ export default function Header() {
           ) : (
             <span data-testid='amount-label'>Nenhum quadrinho adicionado</span>
           )}
-          
         </div>
         <AiOutlineUnorderedList size={32} color='#fff' />
 
