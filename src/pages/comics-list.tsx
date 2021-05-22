@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { BiMailSend } from 'react-icons/bi';
 import { MdDelete } from 'react-icons/md';
+import { IoMdEye } from 'react-icons/io';
 import { useComicsListContext } from 'contexts/ComicsList.context';
 import * as S from 'styles/pages/comics-list.styles';
 
@@ -52,6 +53,10 @@ export default function ComicsList() {
                       <td>
                         <button>
                           Remover da Lista <MdDelete size={16} />
+                        </button>
+
+                        <button>
+                          Detalhes <IoMdEye size={16} />
                         </button>
                       </td>
                     </tr>

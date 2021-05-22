@@ -39,6 +39,7 @@ export const ComicsTable = styled.table`
   }
 
   thead th {
+    text-transform: uppercase;
     color: ${({ theme }) => theme.colors.secondaryDarker};
 
     padding: 12px;
@@ -66,14 +67,19 @@ export const ComicsTable = styled.table`
       }
     }
 
-    /* botão que fica na ultima TD */
+    /* botões que ficam na ultima TD */
     button {
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       column-gap: 0.2rem;
       margin: 0 auto;
       padding: 0.4rem 1rem;
+
+      & + button {
+        margin-top: 0.5rem;
+      }
     }
   }
 `;
