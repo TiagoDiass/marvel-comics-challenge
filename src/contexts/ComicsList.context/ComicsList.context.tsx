@@ -9,12 +9,18 @@ export type IComicsListContext = {
   getTotalComics: () => number;
 };
 
+/**
+ * @context Contexto de Lista de quadrinhos / comics
+ */
 export const ComicsListContext = createContext({} as IComicsListContext);
 
 type ComicsListContextProviderProps = {
   children: ReactNode;
 };
 
+/**
+ * @contextProvider Provider do contexto de Lista de quadrinhos / comics
+ */
 export function ComicsListContextProvider({ children }: ComicsListContextProviderProps) {
   const [comicsList, setComicsList] = useState<Comic[]>([]);
 
@@ -50,4 +56,7 @@ export function ComicsListContextProvider({ children }: ComicsListContextProvide
   );
 }
 
+/**
+ * @contextHook Hook para utilizar o contexto de Lista de quadrinhos / comics
+ */
 export const useComicsListContext = () => useContext(ComicsListContext);
