@@ -8,12 +8,18 @@ export type IModalsContext = {
   closeComicDetailsModal: () => void;
 };
 
+/**
+ * @context Contexto de Modais
+ */
 export const ModalsContext = createContext({} as IModalsContext);
 
 type ModalsContextProviderProps = {
   children: ReactNode;
 };
 
+/**
+ * @contextProvider Provider do contexto de Modais
+ */
 export function ModalsContextProvider({ children }: ModalsContextProviderProps) {
   const [currentComic, setCurrentComic] = useState(null);
   const [isComicDetailsModalOpen, setIsComicDetailsModalOpen] = useState(false);
@@ -41,4 +47,7 @@ export function ModalsContextProvider({ children }: ModalsContextProviderProps) 
   );
 }
 
+/**
+ * @contextHook Hook para utilizar o contexto de Modais
+ */
 export const useModalsContext = () => useContext(ModalsContext);
