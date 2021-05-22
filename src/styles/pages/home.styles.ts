@@ -37,7 +37,7 @@ export const HomeHeading = styled.div`
   }
 `;
 
-export const SearchBar = styled.div<{ isLoading: boolean }>`
+export const SearchBar = styled.form<{ isLoading: boolean }>`
   ${({ theme, isLoading }) => css`
     width: min(500px, 100%);
     height: 100%;
