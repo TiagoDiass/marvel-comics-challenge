@@ -21,3 +21,13 @@ export const fadeFromLeft = keyframes`
     transform: translateX(0);
   }
 `;
+
+export const shimmer = keyframes`
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+`;

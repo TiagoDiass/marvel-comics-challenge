@@ -118,7 +118,7 @@ export const ComicsWrapper = styled.section`
   }
 `;
 
-export const ComicBlock = styled.article<{ thumbnail: string }>`
+export const ComicBlock = styled.article<{ thumbnail?: string }>`
   animation: ${Animations.fadeFromLeft} 0.5s ease;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
     url('${({ thumbnail }) => thumbnail}');
@@ -160,6 +160,25 @@ export const ComicBlock = styled.article<{ thumbnail: string }>`
         text-decoration: underline;
       }
     }
+  }
+
+  &:empty {
+    overflow: hidden;
+    position: relative;
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+      url('${({ thumbnail }) => thumbnail}');
+  }
+
+  &:empty::after {
+    animation: ${Animations.shimmer} 1.2s infinite ease;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
   }
 
   @media (max-width: 1280px) {
