@@ -2,6 +2,12 @@ import Header from 'components/Header/Header';
 import { ComicsListContextProvider } from 'contexts/ComicsList.context';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles, theme } from 'styles';
+import Modal from 'react-modal';
+import { ComicDetailsModal } from 'components/Modals';
+import { ModalsContextProvider } from 'contexts/Modals.context';
+
+// configurando o root element para o react-modal
+Modal.setAppElement('#__next');
 
 export default function App({ Component, pageProps }) {
   return (
@@ -11,8 +17,12 @@ export default function App({ Component, pageProps }) {
         <GlobalStyles />
 
         <ComicsListContextProvider>
-          <Header />
-          <Component {...pageProps} />
+          <ModalsContextProvider>
+            <Header />
+            <Component {...pageProps} />
+
+            <ComicDetailsModal />
+          </ModalsContextProvider>
         </ComicsListContextProvider>
       </ThemeProvider>
     </>
