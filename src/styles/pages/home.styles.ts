@@ -162,6 +162,7 @@ export const ComicBlock = styled.article<{ thumbnail?: string }>`
     }
   }
 
+  /* estiliando o comic block vazio para fazer o shimmer effect */
   &:empty {
     overflow: hidden;
     position: relative;

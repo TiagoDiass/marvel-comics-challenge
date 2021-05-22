@@ -118,6 +118,7 @@ export default function Home() {
         <S.ComicsWrapper data-testid='comics-wrapper'>
           {isLoading ? (
             <>
+              {/* Renderizando 4 comics block vazios para fazer o shimmer effect */}
               <S.ComicBlock />
               <S.ComicBlock />
               <S.ComicBlock />
