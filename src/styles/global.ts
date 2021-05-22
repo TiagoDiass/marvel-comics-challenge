@@ -59,7 +59,6 @@ const globalStyles = createGlobalStyle`
       cursor: pointer;
       filter: brightness(0.8);
     }
-
   }
 `;
 
