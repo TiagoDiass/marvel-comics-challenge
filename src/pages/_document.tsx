@@ -43,22 +43,20 @@ export default class MyDocument extends Document {
 
           <link rel='icon' href='/favicon2.png' type='image/png' />
 
-          {/* <meta property='og:image' content='/thumbnail.png' />
-
           <meta
             name='description'
-            content='Podcastr | Os melhores podcasts de tecnologia para você ouvir!'
+            content='ComicsExplorer | Os melhores quadrinhos da Marvel para você, sempre.'
           />
 
           <meta
             property='og:title'
-            content='Podcastr | Os melhores podcasts de tecnologia para você ouvir!'
+            content='ComicsExplorer | Os melhores quadrinhos da Marvel para você'
           />
 
           <meta
             property='og:description'
-            content='Podcastr é um website onde você pode ouvir os melhores e mais diversos podcasts sobre tecnologia.'
-          /> */}
+            content='ComicsExplorer | Um website onde você pode procurar por quadrinhos da Marvel.'
+          />
         </Head>
         <body>
           <Main />
