@@ -25,6 +25,56 @@ export const ContentContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.whiteDarker};
 `;
 
+export const ComicsTable = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  thead th {
+    color: ${({ theme }) => theme.colors.secondaryDarker};
+
+    padding: 12px;
+    text-align: center;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #eee;
+    @media (max-width: 640px) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+
+  tbody td {
+    padding: 12px;
+    text-align: center;
+
+    /* Primeira TD, que contém a CAPA */
+    &:first-of-type {
+      img {
+        /* width: 100px; */
+        height: 85px;
+      }
+    }
+
+    /* botão que fica na ultima TD */
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 0.2rem;
+      margin: 0 auto;
+      padding: 0.4rem 1rem;
+    }
+  }
+`;
+
 export const Footer = styled.footer`
   margin-top: 2rem;
   display: flex;
@@ -50,10 +100,14 @@ export const Footer = styled.footer`
     input {
       height: 100%;
       outline: none;
-      border: 1px solid ${({ theme }) => theme.colors.secondary};
+      border: 1px solid #eee;
       padding: 0 6px;
       width: 90%;
       border-radius: 4px;
+
+      &:focus {
+        border: 1px solid ${({ theme }) => theme.colors.secondary};
+      }
     }
   }
 
@@ -64,23 +118,5 @@ export const Footer = styled.footer`
     align-items: center;
     justify-content: center;
     column-gap: 0.5rem;
-
-    font-family: ${({ theme }) => theme.fonts.default};
-    text-transform: uppercase;
-    font-weight: bold;
-    color: ${({ theme }) => theme.colors.white};
-    background-color: ${({ theme }) => theme.colors.primary};
-
-    border: none;
-    outline: none;
-    border-radius: 4px;
-
-    cursor: pointer;
-
-    transition: all 0.2s ease;
-
-    &:hover {
-      background-color: ${({ theme }) => theme.colors.primaryDarker};
-    }
   }
 `;
