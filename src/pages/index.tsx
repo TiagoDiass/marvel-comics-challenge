@@ -4,12 +4,12 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { FaSpinner } from 'react-icons/fa';
 import { APIComic, Comic } from '@types';
 
-import api from 'services/api';
 import { Toast } from 'plugins/sweetAlert';
 import { useComicsListContext } from 'contexts/ComicsList.context';
 import { useModalsContext } from 'contexts/Modals.context';
 import convertAPIComicToComic from 'utils/convertAPIComicToComic';
 import * as S from 'styles/pages/home.styles';
+import { comicsService } from 'services/requests';
 
 /**
  * @page Página Home
@@ -29,7 +29,7 @@ export default function Home() {
     async function fetchComics() {
       // buscando dados da API, tipando o retorno deles para depois transformá-los para o formato que o componente espera
       setIsLoading(true);
-      const response = await api.get('/v1/public/comics', { params: { limit: 12 } });
+      const response = await comicsService.getAll({ limit: 12 });
 
       const unformattedComics: APIComic[] = response.data.data.results;
 
@@ -72,9 +72,7 @@ export default function Home() {
       requestParams.titleStartsWith = searchQuery;
     }
 
-    const response = await api.get('/v1/public/comics', {
-      params: requestParams,
-    });
+    const response = await comicsService.getAll(requestParams);
 
     setCurrentPage(currentPage => currentPage + 1);
     const responseResults = response.data.data.results;
@@ -99,12 +97,10 @@ export default function Home() {
     setLoadedAll(false);
     setIsLoadingSearch(true);
 
-    const response = await api.get('/v1/public/comics', {
-      params: {
-        limit: 12,
-        offset: 0,
-        titleStartsWith: searchQuery,
-      },
+    const response = await comicsService.getAll({
+      limit: 12,
+      offset: 0,
+      titleStartsWith: searchQuery,
     });
 
     setCurrentPage(1);
