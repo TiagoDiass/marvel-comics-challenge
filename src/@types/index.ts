@@ -15,7 +15,7 @@ export type APIComic = {
 export type Comic = {
   id: number;
   title: string;
-  description: string;
+  description: string; // optional in APIComic but required here because converter adds a default description
   thumbnailUrl: string;
   totalPageCount: number;
   creators: string[];
